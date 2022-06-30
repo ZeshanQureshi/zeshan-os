@@ -21,13 +21,16 @@
     </div>
 
     <div class="time">
-      <p>{{ time }}</p>
+      <p>{{ moment().format('h:mm a') }}</p>
+      <p>{{ moment().format('MMM DD YYYY') }}</p>
     </div>
   </footer>
 </template>
 
 <script>
 import vClickOutside from 'click-outside-vue3';
+import moment from 'moment';
+
 export default {
   name: 'App',
   data() {
@@ -40,6 +43,9 @@ export default {
     }
   },
   methods: {
+    moment: function () {
+      return moment();
+    },
     openChess() {
       window.open("https:learnchess.me");
     },
@@ -52,18 +58,6 @@ export default {
     menuClickOut() {
       this.showMenu = false;
     }
-  },
-  beforeUnmount() {
-    clearInterval(this.interval)
-  },
-  created() {
-    this.interval = setInterval(() => {
-      this.time = Intl.DateTimeFormat(navigator.language, {
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric'
-      }).format()
-    }, 1000)
   },
   directives: {
       clickOutside: vClickOutside.directive
@@ -180,7 +174,7 @@ h3 {
   width: 100px;
   float: right;
   text-align: center;
-  line-height: 50px;
+  line-height: 25px;
 }
 
 .time:hover {
