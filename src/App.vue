@@ -1,21 +1,22 @@
 <template>
-  <div class="desktop-app">
+  <div class="desktop-app" @dblclick="openChess">
     <img src="../public/learn-chess.png">
     <p>Learn Chess</p>
   </div>
-  <div class="desktop-app">
+  <div class="desktop-app" @dblclick="openRubiks">
     <img src="../public/rubiks-algo.png">
     <p>Rubiks Algo</p>
   </div>
 
   <footer>
-    <div class="start" @click="toggle">
+    <div class="start" @click="toggleBar">
       <img class="os" src="../public/os.png">
     </div>
-    <div v-if="showMenu" class="dropup-content">
-      <p>Hello</p>
-      <p>Hello</p>   
-      <p>Hello</p>   
+    <div v-if="showMenu" class="dropup-content" v-click-outside-element="close">
+      <h3>About Me</h3>
+      <h3>Experience</h3>   
+      <h3>Projects</h3>
+      <h3>Skills</h3>      
     </div>
 
     <div class="time">
@@ -35,11 +36,17 @@ export default {
     }
   },
   methods: {
-    toggle() {
+    toggleBar() {
       this.showMenu = !this.showMenu;
     },
-    onClickOutside() {
-      this.showMenu = false;
+    openChess() {
+      window.open("https:learnchess.me");
+    },
+    openRubiks() {
+      window.open("https:rubiksalgo.tech");
+    },
+    close(){
+      console.log("yop")
     }
   },
   beforeUnmount() {
@@ -53,8 +60,7 @@ export default {
         second: 'numeric'
       }).format()
     }, 1000)
-  },
-  
+  }
 }
 </script>
 
@@ -107,6 +113,12 @@ footer {
 
   box-sizing: border-box;
   user-select: none;
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 100px;
+  width: 100%;
 }
 
 .desktop-app {
