@@ -47,10 +47,10 @@ export default {
       return moment();
     },
     openChess() {
-      window.open("https:learnchess.me");
+      window.open("https://learnchess.me");
     },
     openRubiks() {
-      window.open("https:rubiksalgo.tech");
+      window.open("https://rubiksalgo.tech");
     },
     toggleBar() {
       this.showMenu = !this.showMenu;
