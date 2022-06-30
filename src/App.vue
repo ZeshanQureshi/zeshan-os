@@ -13,7 +13,7 @@
       <img class="os" src="../public/os.png">
     </div>
 
-    <div v-if="showMenu" class="dropup-content">
+    <div v-if="showMenu" class="dropup-content" v-click-outside="menuClickOut">
       <h3>About Me</h3>
       <h3>Experience</h3>   
       <h3>Projects</h3>
@@ -27,26 +27,29 @@
 </template>
 
 <script>
+import vClickOutside from 'click-outside-vue3';
 export default {
   name: 'App',
   data() {
     return {
       interval: null,
       time: null,
-      showMenu: false
+      showMenu: false,
+      showChess: false,
+      showRubiks: false,
     }
   },
   methods: {
-    toggleBar() {
-      this.showMenu = !this.showMenu;
-    },
     openChess() {
       window.open("https:learnchess.me");
     },
     openRubiks() {
       window.open("https:rubiksalgo.tech");
     },
-    closeModal() {
+    toggleBar() {
+      this.showMenu = !this.showMenu;
+    },
+    menuClickOut() {
       this.showMenu = false;
     }
   },
@@ -61,6 +64,9 @@ export default {
         second: 'numeric'
       }).format()
     }, 1000)
+  },
+  directives: {
+      clickOutside: vClickOutside.directive
   }
 }
 </script>
