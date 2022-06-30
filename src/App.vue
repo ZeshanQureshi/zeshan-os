@@ -12,7 +12,8 @@
     <div class="start" @click="toggleBar">
       <img class="os" src="../public/os.png">
     </div>
-    <div v-if="showMenu" class="dropup-content" v-click-outside-element="close">
+
+    <div v-if="showMenu" class="dropup-content">
       <h3>About Me</h3>
       <h3>Experience</h3>   
       <h3>Projects</h3>
@@ -45,8 +46,8 @@ export default {
     openRubiks() {
       window.open("https:rubiksalgo.tech");
     },
-    close(){
-      console.log("yop")
+    closeModal() {
+      this.showMenu = false;
     }
   },
   beforeUnmount() {
@@ -104,8 +105,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #FFAE42;
-  opacity: 0.7;
+  background-color: #7f5d00;
   color: white;
   text-align: center;
   height: 50px;
