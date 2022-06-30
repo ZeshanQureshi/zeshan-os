@@ -13,7 +13,7 @@
       <img class="os" src="../public/os.png">
     </div>
 
-    <div v-if="showMenu" class="dropup-content" v-click-outside="menuClickOut">
+    <div v-if="showMenu" class="dropup-content" data-aos="fade-right" v-click-outside="menuClickOut" >
       <h3>About Me</h3>
       <h3>Experience</h3>   
       <h3>Projects</h3>
@@ -21,31 +21,29 @@
     </div>
 
     <div class="time">
-      <p>{{ moment().format('h:mm a') }}</p>
-      <p>{{ moment().format('MMM DD YYYY') }}</p>
+      <p>{{ time }}</p>
+      <p>{{ date }}</p>
     </div>
   </footer>
 </template>
 
 <script>
 import vClickOutside from 'click-outside-vue3';
-import moment from 'moment';
 
 export default {
   name: 'App',
   data() {
     return {
-      interval: null,
+      intervalTime: null,
+      intervalDate: null,
       time: null,
+      date: null,
       showMenu: false,
       showChess: false,
       showRubiks: false,
     }
   },
   methods: {
-    moment: function () {
-      return moment();
-    },
     openChess() {
       window.open("https://learnchess.me");
     },
@@ -72,8 +70,29 @@ export default {
     }
   },
   directives: {
-      clickOutside: vClickOutside.directive
-  }
+    clickOutside: vClickOutside.directive
+  },
+  beforeUnmount() {
+    clearInterval(this.intervalTime);
+    clearInterval(this.intervalDate);
+  },
+  created() {
+    this.intervalTime = setInterval(() => {
+      this.time = Intl.DateTimeFormat(navigator.language, {
+        hour: 'numeric',
+        minute: 'numeric',
+      }).format()
+    }, 1000)
+
+    this.intervalDate = setInterval(() => {
+      this.date = Intl.DateTimeFormat(navigator.language, {
+        month: 'short',
+        day: "numeric",
+        year: "numeric"
+      }).format()
+    }, 1000)
+    
+  },
 }
 </script>
 
@@ -117,11 +136,11 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #7f5d00;
+  background-color: purple;
   color: white;
   text-align: center;
   height: 50px;
-  border-top: 1px solid rgb(154, 100, 0);
+  border-top: 1px solid rgb(75, 1, 75);
 
   box-sizing: border-box;
   user-select: none;
@@ -140,6 +159,12 @@ h3 {
   user-select: none;
 }
 
+.desktop-app:hover {
+  background-color:rgba(125, 165, 250,0.5);
+  border: 1px solid rgb(125, 165, 250);
+  box-sizing: border-box;
+}
+
 .desktop-app-click {
   background-color:rgba(125, 165, 250,0.5);
   border: 1px solid rgb(125, 165, 250);
@@ -151,6 +176,7 @@ h3 {
   width: 60px;
   position: relative;
   float: left;
+  border-right: 1px solid rgb(75, 1, 75);
 }
 
 .dropup-content {
@@ -159,13 +185,13 @@ h3 {
   height: 400px;
   width: 300px;
   bottom: 50px;
-  background-color: rgb(154, 100, 0);
+  background-color: rgb(181, 1, 181);
   z-index: 1;
 }
 
 
 .start:hover {
-  background-color: rgb(154, 100, 0);
+  background-color: rgb(181, 1, 181);
 }
 
 .os {
@@ -187,10 +213,11 @@ h3 {
   float: right;
   text-align: center;
   line-height: 25px;
+  border-left: 1px solid rgb(75, 1, 75);
 }
 
 .time:hover {
-  background-color: rgb(154, 100, 0);
+  background-color: rgb(181, 1, 181);
 }
 
 </style>
