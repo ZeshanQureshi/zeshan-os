@@ -1,9 +1,9 @@
 <template>
-  <div class="desktop-app" @dblclick="openChess">
+  <div class="desktop-app" @click="toggleChess" @dblclick="openChess" :class='{ "desktop-app-click": showChess }' v-click-outside="chessClickOut">
     <img src="../public/learn-chess.png">
     <p>Learn Chess</p>
   </div>
-  <div class="desktop-app" @dblclick="openRubiks">
+  <div class="desktop-app"  @click="toggleRubiks" @dblclick="openRubiks" :class='{ "desktop-app-click": showRubiks }' v-click-outside="rubiksClickOut">
     <img src="../public/rubiks-algo.png">
     <p>Rubiks Algo</p>
   </div>
@@ -55,8 +55,20 @@ export default {
     toggleBar() {
       this.showMenu = !this.showMenu;
     },
+    toggleChess() {
+      this.showChess = true;
+    },
+    toggleRubiks() {
+      this.showRubiks = true;
+    },
     menuClickOut() {
       this.showMenu = false;
+    },
+    chessClickOut() {
+      this.showChess = false;
+    },
+    rubiksClickOut() {
+      this.showRubiks = false;
     }
   },
   directives: {
@@ -128,7 +140,7 @@ h3 {
   user-select: none;
 }
 
-.desktop-app:hover {
+.desktop-app-click {
   background-color:rgba(125, 165, 250,0.5);
   border: 1px solid rgb(125, 165, 250);
   box-sizing: border-box;
