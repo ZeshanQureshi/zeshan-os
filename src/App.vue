@@ -22,10 +22,26 @@
       </div>
 
       <div class="start-application">
-        <h3>About Me</h3>
-        <h3>Experience</h3>   
-        <h3>Projects</h3>
-        <h3>Skills</h3> 
+        <div class="start-label"><h5>A</h5></div>
+        <div class="start-app">
+          <img class="start-app-icon" src="../public/notepad.png">
+          <h4>AboutMe.txt</h4>
+        </div>
+        <div class="start-label"><h5>E</h5></div>
+        <div class="start-app">
+          <img class="start-app-icon" src="../public/notepad.png">
+          <h4>Experience.txt</h4>
+        </div>
+        <div class="start-label"><h5>P</h5></div>
+        <div class="start-app">
+          <img class="start-app-icon" src="../public/notepad.png">
+          <h4>Projects.txt</h4>
+        </div>
+        <div class="start-label"><h5>S</h5></div>
+        <div class="start-app">
+          <img class="start-app-icon" src="../public/notepad.png">
+          <h4>Skills.txt</h4>
+        </div>
       </div>   
     </div>
 
@@ -161,6 +177,15 @@ h3 {
   width: 100%;
 }
 
+h4 {
+  line-height: 50px;
+}
+
+h5 {
+  margin-left: 18px;
+  line-height: 37px;
+}
+
 .desktop-app {
   width: 100px;
   height: 120px;
@@ -185,13 +210,44 @@ h3 {
 .dropup-content {
   display: block;
   position: absolute;
-  height: 400px;
+  height: 380px;
   width: 300px;
   bottom: 50px;
   background-color: rgb(75, 1, 75);
   border: 1px solid rgb(75, 1, 75);
   border-bottom: none;
   z-index: 1;
+}
+
+.start-label {
+  width: 100%;
+  height: 35px;
+  text-align: left;
+}
+
+.start-application {
+  width: 240px;
+  height: 100%;
+  float: left;
+}
+
+.start-app {
+  width: 100%;
+  height: 60px;
+  text-align: left;
+}
+
+.start-app:hover {
+  background-color: rgb(181, 1, 181);
+}
+
+.start-app-icon {
+  height: 30px;
+  width: 30px;
+  float: left;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 5px;
 }
 
 .start-icon {
