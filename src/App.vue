@@ -8,18 +8,33 @@
     <p>Rubiks Algo</p>
   </div>
 
-  <div class="window">
+  <div v-if='windowState == "Open"' class="window" :class='{ "window-full": windowSize == "Full" }'>
     <div class="window-menu">
       <div class="window-menu-top">
-        <h6 class="window-close">×</h6>
-        <h6>❑</h6>
-        <h6>−</h6>
+        <h2 class="window-tag">{{ fileName }}</h2>
+        <h6 class="window-close" @click="closeWindow">×</h6>
+        <h6 @click="windowSizing">❑</h6>
+        <h6 @click="minimizeWindow">−</h6>
       </div>
       <div class="window-menu-content">
-        <div class="window-menu-content-label">AboutMe.txt</div>
-        <div class="window-menu-content-label">Experience.txt</div>
-        <div class="window-menu-content-label">Projects.txt</div>
-        <div class="window-menu-content-label">Skills.txt</div>
+        <div class="window-menu-content-label" @click="changeText('AboutMe.txt')">AboutMe.txt</div>
+        <div class="window-menu-content-label" @click="changeText('Experience.txt')">Experience.txt</div>
+        <div class="window-menu-content-label" @click="changeText('Projects.txt')">Projects.txt</div>
+        <div class="window-menu-content-label" @click="changeText('Skills.txt')">Skills.txt</div>
+      </div>
+    </div>
+    <div class="window-content">
+      <div v-if="fileName == 'AboutMe.txt'">
+        AboutME
+      </div>
+      <div v-else-if="fileName == 'Experience.txt'">
+        Experience
+      </div>
+      <div v-else-if="fileName == 'Projects.txt'">
+        Projects
+      </div>
+      <div v-else-if="fileName == 'Skills.txt'">
+        SKills
       </div>
     </div>
   </div>
@@ -39,31 +54,38 @@
 
       <div class="start-application">
         <div class="start-label"><h5>A</h5></div>
-        <div class="start-app">
+        <div class="start-app" @click="displayWindow('AboutMe.txt')">
           <img class="start-app-icon" src="../public/notepad.png">
           <h4>AboutMe.txt</h4>
         </div>
         <div class="start-label"><h5>E</h5></div>
-        <div class="start-app">
+        <div class="start-app" @click="displayWindow('Experience.txt')">
           <img class="start-app-icon" src="../public/notepad.png">
           <h4>Experience.txt</h4>
         </div>
         <div class="start-label"><h5>P</h5></div>
-        <div class="start-app">
+        <div class="start-app" @click="displayWindow('Projects.txt')">
           <img class="start-app-icon" src="../public/notepad.png">
           <h4>Projects.txt</h4>
         </div>
         <div class="start-label"><h5>S</h5></div>
-        <div class="start-app">
+        <div class="start-app" @click="displayWindow('Skills.txt')">
           <img class="start-app-icon" src="../public/notepad.png">
           <h4>Skills.txt</h4>
         </div>
       </div>   
     </div>
 
+    <div class="start-tabs">
+      <div class="start-tabs-note" @click="displayWindow('AboutMe.txt')" 
+      :class='{ "start-tabs-open": windowState == "Open", "start-tabs-minimized": windowState == "Minimized"  }'>
+        <img class="start-tabs-icon" src="../public/notepad.png">
+      </div>
+    </div>
+
     <div class="time">
-      <p>{{ time }}</p>
-      <p>{{ date }}</p>
+      <h1>{{ time }}</h1>
+      <h1>{{ date }}</h1>
     </div>
   </footer>
 </template>
@@ -82,6 +104,9 @@ export default {
       showMenu: false,
       showChess: false,
       showRubiks: false,
+      windowState: "Close",
+      fileName: ".txt",
+      windowSize: "Window"
     }
   },
   methods: {
@@ -108,6 +133,27 @@ export default {
     },
     rubiksClickOut() {
       this.showRubiks = false;
+    },
+    displayWindow(tabName) {
+      this.showMenu = false;
+      this.fileName = tabName;
+      this.windowState = "Open";
+    },
+    closeWindow() {
+      this.windowState = "Close";
+    },
+    minimizeWindow() {
+      this.windowState = "Minimized";
+    },  
+    changeText(tabName) {
+      this.fileName = tabName;
+    },
+    windowSizing() {
+      if(this.windowSize == "Window") {
+        this.windowSize = "Full"
+      } else {
+        this.windowSize = "Window"
+      }
     }
   },
   directives: {
@@ -187,6 +233,12 @@ footer {
   user-select: none;
 }
 
+p {
+  white-space: nowrap;
+  word-wrap: break-word;
+  width: min-content;
+}
+
 h3 {
   font-size: 18px;
   line-height: 100px;
@@ -223,17 +275,31 @@ h6:hover {
   height: 50%;
   width: 50%;
   border: 1px solid purple; 
-  background-color: white;
+  background-color: black;
+  position: fixed;
   top: 25%;
   left: 25%;
-  position: absolute;
   box-sizing: border-box;
+}
+
+.window-full {
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  border:none;
+}
+
+.window-tag {
+  float: left;
+  margin-left: 5px;
 }
 
 .window-menu {
   height: 75px;
   width: 100%;
 }
+
 .window-menu-top {
   height: 25px;
   width: 100%;
@@ -247,16 +313,24 @@ h6:hover {
   height: 50px;
   float: left;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  box-sizing:border-box;
+  line-height: 50px;
+  box-sizing: border-box;
   background-color: rgb(46, 43, 43);
   border-bottom: 1px black solid;
 }
 
 .window-menu-content-label:hover {
+  background-color: rgb(60, 57, 57);
+}
+
+.window-content {
+  height: calc(100% - 75px);
+  width: 100%;
   background-color: black;
+  overflow-y: auto;
+  padding: 5px;
+  box-sizing:border-box;
+  display:inline-block
 }
 
 .desktop-app {
@@ -278,6 +352,38 @@ h6:hover {
   position: relative;
   float: left;
   border-right: 1px solid rgb(75, 1, 75);
+}
+
+.start-tabs {
+  height: 100%;
+  width: calc(100% - 182px);
+  float: left;
+}
+
+.start-tabs-note {
+  box-sizing: content-box;
+  width: 70px;
+  height: 45px;
+  margin-left: 10px;
+}
+
+.start-tabs-note:hover {
+  background-color: rgb(181, 1, 181);
+}
+
+.start-tabs-open {
+  border-bottom: 5px solid rgb(75, 1, 75);
+  background-color: rgb(181, 1, 181);
+}
+
+.start-tabs-minimized {
+  border-bottom: 5px solid rgb(75, 1, 75);
+}
+
+.start-tabs-icon {
+  width: 35px;
+  height: 35px;
+  margin-top: 5px;
 }
 
 .dropup-content {
@@ -368,7 +474,7 @@ h6:hover {
 .time {
   height: 50px;
   width: 120px;
-  float: right;
+  float: left;
   text-align: center;
   line-height: 25px;
   border-left: 1px solid rgb(75, 1, 75);
