@@ -178,7 +178,7 @@ h3 {
 }
 
 h4 {
-  line-height: 50px;
+  line-height: 60px;
 }
 
 h5 {
@@ -245,9 +245,8 @@ h5 {
   height: 30px;
   width: 30px;
   float: left;
-  margin-top: 20px;
-  padding-left: 10px;
-  padding-right: 5px;
+  margin-top: 13px;
+  padding: 0 10px 0 10px;
 }
 
 .start-icon {
@@ -271,9 +270,9 @@ h5 {
 }
 
 .power-img {
-  width: 42px;
-  height: 42px;
-  margin-top: 9px;
+  width: 30px;
+  height: 30px;
+  margin-top: 15px;
 }
 
 .start:hover {
