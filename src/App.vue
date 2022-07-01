@@ -8,6 +8,22 @@
     <p>Rubiks Algo</p>
   </div>
 
+  <div class="window">
+    <div class="window-menu">
+      <div class="window-menu-top">
+        <h6 class="window-close">×</h6>
+        <h6>❑</h6>
+        <h6>−</h6>
+      </div>
+      <div class="window-menu-content">
+        <div class="window-menu-content-label">AboutMe.txt</div>
+        <div class="window-menu-content-label">Experience.txt</div>
+        <div class="window-menu-content-label">Projects.txt</div>
+        <div class="window-menu-content-label">Skills.txt</div>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <div class="start" @click="toggleBar" ondragstart="return false" ondrop="return false">
       <img class="os" src="../public/os.png">
@@ -184,6 +200,63 @@ h4 {
 h5 {
   margin-left: 18px;
   line-height: 37px;
+}
+
+h6 {
+  float: right;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  box-sizing:border-box;
+}
+
+h6:hover {
+  background-color: blueviolet;
+}
+
+.window-close:hover {
+  background-color: red;
+}
+
+.window {
+  height: 50%;
+  width: 50%;
+  border: 1px solid purple; 
+  background-color: white;
+  top: 25%;
+  left: 25%;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.window-menu {
+  height: 75px;
+  width: 100%;
+}
+.window-menu-top {
+  height: 25px;
+  width: 100%;
+  background-color: purple;
+  float: left;
+  box-sizing:border-box;
+}
+
+.window-menu-content-label {
+  width: 25%;
+  height: 50px;
+  float: left;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  box-sizing:border-box;
+  background-color: rgb(46, 43, 43);
+  border-bottom: 1px black solid;
+}
+
+.window-menu-content-label:hover {
+  background-color: black;
 }
 
 .desktop-app {
