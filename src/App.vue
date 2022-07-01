@@ -1,11 +1,11 @@
 <template>
   <div class="desktop-app" @click="toggleChess" @dblclick="openChess" :class='{ "desktop-app-click": showChess }' v-click-outside="chessClickOut" ondragstart="return false" ondrop="return false">
     <img src="../public/learn-chess.png">
-    <p>Learn Chess</p>
+    <h2>Learn Chess</h2>
   </div>
   <div class="desktop-app"  @click="toggleRubiks" @dblclick="openRubiks" :class='{ "desktop-app-click": showRubiks }' v-click-outside="rubiksClickOut" ondragstart="return false" ondrop="return false">
     <img src="../public/rubiks-algo.png">
-    <p>Rubiks Algo</p>
+    <h2>Rubiks Algo</h2>
   </div>
 
   <div v-if='windowState == "Open"' class="window" :class='{ "window-full": windowSize == "Full" }'>
@@ -237,6 +237,11 @@ p {
   white-space: nowrap;
   word-wrap: break-word;
   width: min-content;
+}
+
+h2 {
+  text-align: center;
+  text-decoration: none;
 }
 
 h3 {
