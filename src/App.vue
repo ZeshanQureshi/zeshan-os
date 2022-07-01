@@ -8,7 +8,7 @@
     <h2>Rubiks Algo</h2>
   </div>
 
-  <div v-if='windowState == "Open"' class="window" :class='{ "window-full": windowSize == "Full" }'>
+  <div v-if='windowState == "Open"' class="window animate__fadeInUp" :class='{ "window-full": windowSize == "Full" }'>
     <div class="window-menu">
       <div class="window-menu-top">
         <h2 class="window-tag">{{ fileName }}</h2>
@@ -92,6 +92,7 @@
 
 <script>
 import vClickOutside from 'click-outside-vue3';
+import 'animate.css';
 
 export default {
   name: 'App',
@@ -178,8 +179,8 @@ export default {
         year: "numeric"
       }).format()
     }, 1000)
-    
   },
+
 }
 </script>
 
@@ -231,6 +232,7 @@ footer {
 
   box-sizing: border-box;
   user-select: none;
+  z-index: 100;
 }
 
 p {
@@ -241,7 +243,7 @@ p {
 
 h2 {
   text-align: center;
-  text-decoration: none;
+  font-weight: normal;
 }
 
 h3 {
@@ -285,6 +287,7 @@ h6:hover {
   top: 25%;
   left: 25%;
   box-sizing: border-box;
+  z-index: 10;
 }
 
 .window-full {
