@@ -1,23 +1,32 @@
 <template>
-  <div class="desktop-app" @click="toggleChess" @dblclick="openChess" :class='{ "desktop-app-click": showChess }' v-click-outside="chessClickOut">
+  <div class="desktop-app" @click="toggleChess" @dblclick="openChess" :class='{ "desktop-app-click": showChess }' v-click-outside="chessClickOut" ondragstart="return false" ondrop="return false">
     <img src="../public/learn-chess.png">
     <p>Learn Chess</p>
   </div>
-  <div class="desktop-app"  @click="toggleRubiks" @dblclick="openRubiks" :class='{ "desktop-app-click": showRubiks }' v-click-outside="rubiksClickOut">
+  <div class="desktop-app"  @click="toggleRubiks" @dblclick="openRubiks" :class='{ "desktop-app-click": showRubiks }' v-click-outside="rubiksClickOut" ondragstart="return false" ondrop="return false">
     <img src="../public/rubiks-algo.png">
     <p>Rubiks Algo</p>
   </div>
 
   <footer>
-    <div class="start" @click="toggleBar">
+    <div class="start" @click="toggleBar" ondragstart="return false" ondrop="return false">
       <img class="os" src="../public/os.png">
     </div>
 
-    <div v-if="showMenu" class="dropup-content" data-aos="fade-right" v-click-outside="menuClickOut" >
-      <h3>About Me</h3>
-      <h3>Experience</h3>   
-      <h3>Projects</h3>
-      <h3>Skills</h3>      
+    <div v-if="showMenu" class="dropup-content" 
+    data-aos="fade-right" v-click-outside="menuClickOut" >
+      <div class="start-icon">
+        <div class="start-power" ondragstart="return false" ondrop="return false">
+          <img class="power-img" src="../public/power.png">
+        </div>
+      </div>
+
+      <div class="start-application">
+        <h3>About Me</h3>
+        <h3>Experience</h3>   
+        <h3>Projects</h3>
+        <h3>Skills</h3> 
+      </div>   
     </div>
 
     <div class="time">
@@ -147,7 +156,7 @@ footer {
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 18px;
   line-height: 100px;
   width: 100%;
 }
@@ -157,12 +166,6 @@ h3 {
   height: 120px;
   text-align: center;
   user-select: none;
-}
-
-.desktop-app:hover {
-  background-color:rgba(125, 165, 250,0.5);
-  border: 1px solid rgb(125, 165, 250);
-  box-sizing: border-box;
 }
 
 .desktop-app-click {
@@ -185,10 +188,37 @@ h3 {
   height: 400px;
   width: 300px;
   bottom: 50px;
-  background-color: rgb(181, 1, 181);
+  background-color: rgb(75, 1, 75);
+  border: 1px solid rgb(75, 1, 75);
+  border-bottom: none;
   z-index: 1;
 }
 
+.start-icon {
+  width: 60px;
+  height: 100%;
+  float: left;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.start-power {
+  display: inline-block;
+  align-self: flex-end;
+  width: 60px;
+  height: 60px;
+  margin: 0;
+}
+
+.start-power:hover {
+  background-color: rgb(181, 1, 181);
+}
+
+.power-img {
+  width: 42px;
+  height: 42px;
+  margin-top: 9px;
+}
 
 .start:hover {
   background-color: rgb(181, 1, 181);
@@ -209,7 +239,7 @@ h3 {
 
 .time {
   height: 50px;
-  width: 100px;
+  width: 120px;
   float: right;
   text-align: center;
   line-height: 25px;
