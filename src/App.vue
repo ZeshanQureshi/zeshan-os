@@ -8,9 +8,9 @@
     <h2>Rubiks Algo</h2>
   </div>
 
-  <div v-if='windowState == "Open"' class="window animate__fadeInUp" :class='{ "window-full": windowSize == "Full" }'>
+  <div v-if='windowState == "Open"' class="window animate__fadeInUp" :class='{ "window-full": windowSize == "Full" }' ref="draggableContainer" id="draggable-container">
     <div class="window-menu">
-      <div class="window-menu-top">
+      <div class="window-menu-top" id="draggable-header" @mousedown="dragMouseDown">
         <h2 class="window-tag">{{ fileName }}</h2>
         <h6 class="window-close" @click="closeWindow">×</h6>
         <h6 @click="windowSizing">❑</h6>
@@ -25,7 +25,7 @@
     </div>
     <div class="window-content">
       <div v-if="fileName == 'AboutMe.txt'">
-        Hello My name is Zeshan Qureshi and I am Hello My name is Zeshan Qureshi and I am
+        Hello My name is Zeshan Qureshi
        
       </div>
       <div v-else-if="fileName == 'Experience.txt'">
@@ -35,7 +35,7 @@
         Projects
       </div>
       <div v-else-if="fileName == 'Skills.txt'">
-        SKills
+        Skills
       </div>
     </div>
   </div>
@@ -107,7 +107,15 @@ export default {
       showRubiks: false,
       windowState: "Close",
       fileName: ".txt",
-      windowSize: "Window"
+      windowSize: "Window",
+      saveX: undefined,
+      saveY: undefined,
+      positions: {
+        clientX: undefined,
+        clientY: undefined,
+        movementX: 0,
+        movementY: 0
+      }
     }
   },
   methods: {
@@ -162,12 +170,46 @@ export default {
     windowSizing() {
       if(this.windowSize == "Window") {
         this.windowSize = "Full"
+        this.saveY = this.$refs.draggableContainer.style.top;
+        this.saveX = this.$refs.draggableContainer.style.left;
+        this.$refs.draggableContainer.style.top = "0px";
+        this.$refs.draggableContainer.style.left = "0px";
       } else {
         this.windowSize = "Window"
+        this.$refs.draggableContainer.style.top = this.saveY;
+        this.$refs.draggableContainer.style.left = this.saveX;
       }
     },
     closeOS() {
       close();
+    },
+    dragMouseDown: function (event) {
+      if (this.windowSize != "Full") {
+        event.preventDefault()
+      // get the mouse cursor position at startup:
+        this.positions.clientX = event.clientX
+        this.positions.clientY = event.clientY
+        document.onmousemove = this.elementDrag
+        document.onmouseup = this.closeDragElement
+      }
+    },
+    elementDrag: function (event) {
+      event.preventDefault()
+      if (this.windowSize != "Full") {
+        this.positions.movementX = this.positions.clientX - event.clientX
+        this.positions.movementY = this.positions.clientY - event.clientY
+        this.positions.clientX = event.clientX
+        this.positions.clientY = event.clientY
+        // set the element's new position:
+        this.$refs.draggableContainer.style.top = (this.$refs.draggableContainer.offsetTop - this.positions.movementY) + 'px'
+        this.$refs.draggableContainer.style.left = (this.$refs.draggableContainer.offsetLeft - this.positions.movementX) + 'px'
+      } 
+    },
+    closeDragElement () {
+      if (this.windowSize != "Full") {
+        document.onmouseup = null
+        document.onmousemove = null
+      }
     }
   },
   directives: {
@@ -295,7 +337,7 @@ h6:hover {
   height: 50%;
   width: 50%;
   border: 1px solid purple; 
-  background-color: black;
+  background-color: purple;
   position: fixed;
   top: 25%;
   left: 25%;
@@ -311,7 +353,8 @@ h6:hover {
   width: 100%;
   top: 0%;
   left: 0%;
-  border:none;
+  border: none;
+  position: fixed;
 }
 
 .window-tag {
@@ -393,7 +436,7 @@ h6:hover {
   box-sizing: content-box;
   width: 70px;
   height: 45px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .start-tabs-note:hover {
