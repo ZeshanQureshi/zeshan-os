@@ -55,22 +55,22 @@
 
       <div class="start-application">
         <div class="start-label"><h5>A</h5></div>
-        <div class="start-app"  @click="displayWindow('AboutMe.txt')">
+        <div class="start-app"  @click="displayWindow('AboutMe.txt')" ondragstart="return false" ondrop="return false">
           <img class="start-app-icon" src="../public/notepad.png">
           <h4>AboutMe.txt</h4>
         </div>
         <div class="start-label"><h5>E</h5></div>
-        <div class="start-app" @click="displayWindow('Experience.txt')">
+        <div class="start-app" @click="displayWindow('Experience.txt')" ondragstart="return false" ondrop="return false">
           <img class="start-app-icon" src="../public/notepad.png">
           <h4>Experience.txt</h4>
         </div>
         <div class="start-label"><h5>P</h5></div>
-        <div class="start-app" @click="displayWindow('Projects.txt')">
+        <div class="start-app" @click="displayWindow('Projects.txt')" ondragstart="return false" ondrop="return false">
           <img class="start-app-icon" src="../public/notepad.png">
           <h4>Projects.txt</h4>
         </div>
         <div class="start-label"><h5>S</h5></div>
-        <div class="start-app" @click="displayWindow('Skills.txt')">
+        <div class="start-app" @click="displayWindow('Skills.txt')" ondragstart="return false" ondrop="return false">
           <img class="start-app-icon" src="../public/notepad.png">
           <h4>Skills.txt</h4>
         </div>
@@ -79,7 +79,7 @@
 
     <div class="start-tabs">
       <div class="start-tabs-note" @click="startWindow('AboutMe.txt')" 
-      :class='{ "start-tabs-open": windowState == "Open", "start-tabs-minimized": windowState == "Minimized"  }'>
+      :class='{ "start-tabs-open": windowState == "Open", "start-tabs-minimized": windowState == "Minimized"  }' ondragstart="return false" ondrop="return false">
         <img class="start-tabs-icon" src="../public/notepad.png">
       </div>
     </div>
@@ -301,6 +301,9 @@ h6:hover {
   top: 25%;
   left: 25%;
   box-sizing: border-box;
+  -moz-box-shadow: 0 0 3px black;
+  -webkit-box-shadow: 0 0 3px black;
+  box-shadow: 0 0 3px black;
   z-index: 10;
 }
 
@@ -320,6 +323,7 @@ h6:hover {
 .window-menu {
   height: 75px;
   width: 100%;
+  user-select: none;
 }
 
 .window-menu-top {
