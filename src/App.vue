@@ -17,15 +17,16 @@
         <h6 @click="minimizeWindow">−</h6>
       </div>
       <div class="window-menu-content">
-        <div class="window-menu-content-label" @click="changeText('AboutMe.txt')">AboutMe.txt</div>
-        <div class="window-menu-content-label" @click="changeText('Experience.txt')">Experience.txt</div>
-        <div class="window-menu-content-label" @click="changeText('Projects.txt')">Projects.txt</div>
-        <div class="window-menu-content-label" @click="changeText('Skills.txt')">Skills.txt</div>
+        <div class="window-menu-content-label" :class='{ "window-active-tab": fileName == "AboutMe.txt" }' @click="changeText('AboutMe.txt')">AboutMe.txt</div>
+        <div class="window-menu-content-label" :class='{ "window-active-tab": fileName == "Experience.txt" }' @click="changeText('Experience.txt')">Experience.txt</div>
+        <div class="window-menu-content-label" :class='{ "window-active-tab": fileName == "Projects.txt" }' @click="changeText('Projects.txt')">Projects.txt</div>
+        <div class="window-menu-content-label" :class='{ "window-active-tab": fileName == "Skills.txt" }' @click="changeText('Skills.txt')">Skills.txt</div>
       </div>
     </div>
     <div class="window-content">
       <div v-if="fileName == 'AboutMe.txt'">
-        AboutME
+        Hello My name is Zeshan Qureshi and I am Hello My name is Zeshan Qureshi and I am
+       
       </div>
       <div v-else-if="fileName == 'Experience.txt'">
         Experience
@@ -47,14 +48,14 @@
     <div v-if="showMenu" class="dropup-content" 
     data-aos="fade-right" v-click-outside="menuClickOut" >
       <div class="start-icon">
-        <div class="start-power" ondragstart="return false" ondrop="return false">
+        <div class="start-power" ondragstart="return false" ondrop="return false" @click="closeOS">
           <img class="power-img" src="../public/power.png">
         </div>
       </div>
 
       <div class="start-application">
         <div class="start-label"><h5>A</h5></div>
-        <div class="start-app" @click="displayWindow('AboutMe.txt')">
+        <div class="start-app"  @click="displayWindow('AboutMe.txt')">
           <img class="start-app-icon" src="../public/notepad.png">
           <h4>AboutMe.txt</h4>
         </div>
@@ -77,7 +78,7 @@
     </div>
 
     <div class="start-tabs">
-      <div class="start-tabs-note" @click="displayWindow('AboutMe.txt')" 
+      <div class="start-tabs-note" @click="startWindow('AboutMe.txt')" 
       :class='{ "start-tabs-open": windowState == "Open", "start-tabs-minimized": windowState == "Minimized"  }'>
         <img class="start-tabs-icon" src="../public/notepad.png">
       </div>
@@ -149,12 +150,26 @@ export default {
     changeText(tabName) {
       this.fileName = tabName;
     },
+    startWindow() {
+      if (this.windowState == "Close") {
+        this.windowState = "Open";
+        this.fileName = "AboutMe.txt";
+        this.windowSize = "Window"
+      } else if (this.windowState == "Minimized") {
+        this.windowState = "Open";
+      } else {
+        this.windowState = "Minimized";
+      }
+    },
     windowSizing() {
       if(this.windowSize == "Window") {
         this.windowSize = "Full"
       } else {
         this.windowSize = "Window"
       }
+    },
+    closeOS() {
+      close();
     }
   },
   directives: {
@@ -328,6 +343,10 @@ h6:hover {
 }
 
 .window-menu-content-label:hover {
+  background-color: rgb(60, 57, 57);
+}
+
+.window-active-tab {
   background-color: rgb(60, 57, 57);
 }
 
