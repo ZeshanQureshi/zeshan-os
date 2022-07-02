@@ -8,7 +8,7 @@
     <h2>Rubiks Algo</h2>
   </div>
 
-  <div v-if='windowState == "Open"' class="window animate__fadeInUp" :class='{ "window-full": windowSize == "Full" }' ref="draggableContainer" id="draggable-container">
+  <div v-show='windowState == "Open"' class="window animate__fadeInUp" :class='{ "window-full": windowSize == "Full" }' ref="draggableContainer" id="draggable-container">
     <div class="window-menu">
       <div class="window-menu-top" id="draggable-header" @mousedown="dragMouseDown">
         <h2 class="window-tag">{{ fileName }}</h2>
@@ -201,8 +201,13 @@ export default {
         this.positions.clientX = event.clientX
         this.positions.clientY = event.clientY
         // set the element's new position:
-        this.$refs.draggableContainer.style.top = (this.$refs.draggableContainer.offsetTop - this.positions.movementY) + 'px'
-        this.$refs.draggableContainer.style.left = (this.$refs.draggableContainer.offsetLeft - this.positions.movementX) + 'px'
+        if ((this.$refs.draggableContainer.offsetTop - this.positions.movementY) > 0 && (this.$refs.draggableContainer.offsetTop - this.positions.movementY + document.getElementById('draggable-container').offsetHeight ) < (window.innerHeight - 50)) {
+          this.$refs.draggableContainer.style.top = (this.$refs.draggableContainer.offsetTop - this.positions.movementY) + 'px'   
+        } 
+        
+        if ((this.$refs.draggableContainer.offsetLeft - this.positions.movementX) > 0 && (this.$refs.draggableContainer.offsetLeft - this.positions.movementX + document.getElementById('draggable-container').offsetWidth) < window.innerWidth) {
+          this.$refs.draggableContainer.style.left = (this.$refs.draggableContainer.offsetLeft - this.positions.movementX) + 'px'
+        }
       } 
     },
     closeDragElement () {
