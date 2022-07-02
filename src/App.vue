@@ -93,7 +93,6 @@
 
 <script>
 import vClickOutside from 'click-outside-vue3';
-import 'animate.css';
 
 export default {
   name: 'App',
