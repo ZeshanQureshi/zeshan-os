@@ -154,7 +154,6 @@ export default {
       if (this.windowState == "Close") {
         this.windowState = "Open";
         this.fileName = "AboutMe.txt";
-        this.windowSize = "Window"
       } else if (this.windowState == "Minimized") {
         this.windowState = "Open";
       } else {
