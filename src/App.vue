@@ -3,10 +3,12 @@
     <img src="../public/learn-chess.png">
     <h2>Learn Chess</h2>
   </div>
+  <!--
   <div class="desktop-app"  @click="toggleRubiks" @dblclick="openRubiks" :class='{ "desktop-app-click": showRubiks }' v-click-outside="rubiksClickOut" ondragstart="return false" ondrop="return false">
     <img src="../public/rubiks-algo.png">
     <h2>Rubiks Algo</h2>
   </div>
+  -->
 
   <div v-show='windowState == "Open"' class="window animate__fadeInUp" :class='{ "window-full": windowSize == "Full" }' ref="draggableContainer" id="draggable-container">
     <div class="window-menu">
@@ -25,8 +27,31 @@
     </div>
     <div class="window-content">
       <div v-if="fileName == 'AboutMe.txt'">
-        Hello My name is Zeshan Qureshi
-       
+        <div class="window-text-header">
+          About Me
+        </div> 
+        <div class="window-image">
+          <img class="window-image-me" src="../public/me.jpg">
+        </div>
+        <div class="window-text">
+          <ul class="window-align-list">
+            <li>👋 Hi, I’m Zeshan</li>
+            <li>🗺️ I live in Toronto, Ontario</li>
+            <li>🏫 I'm a Mechanical Engineering student at the University of Waterloo</li>
+            <li>📚 I have finished my 2nd year</li>
+            <li>💼 I am currently working at AutoVerify as a Software Developer</li>
+            <li>👀 I am interested in Software Development</li>
+            <li>🌱 I am currently learning Object Oriented Programming</li>
+            <li>📫 I can be contacted at <a href="mailto:z22qures@gmail.com?subject=Hello!" target="_blank">z22qures@gmail.com</a></li>
+          </ul>
+        </div>
+
+        <div class="window-text">
+          <ul class="window-align-list">
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/zeshanq/" target="_blank">LinkedIn.com/in/ZeshanQ/</a></li>
+            <li>GitHub: <a href="https://github.com/ZeshanQureshi" target="_blank">GitHub.com/ZeshanQureshi</a></li>
+          </ul> 
+        </div>
       </div>
       <div v-else-if="fileName == 'Experience.txt'">
         Experience
@@ -334,6 +359,10 @@ h6:hover {
   background-color: blueviolet;
 }
 
+ul {
+  list-style-type: square;
+}
+
 .window-close:hover {
   background-color: red;
 }
@@ -351,6 +380,38 @@ h6:hover {
   -webkit-box-shadow: 0 0 3px black;
   box-shadow: 0 0 3px black;
   z-index: 10;
+}
+
+.window-text-header {
+  width: 100%;
+  line-height: 50px;
+  text-align: center;
+}
+
+.window-image {
+  width: 100%;
+  padding: 0 40px 0 40px;
+  box-sizing: border-box;
+}
+
+.window-text {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.window-image-me {
+  max-height: 400px;
+  max-width: 400px;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.window-align-list {
+  display: inline-block;
+  text-align: left;
 }
 
 .window-full {
@@ -390,6 +451,9 @@ h6:hover {
   box-sizing: border-box;
   background-color: rgb(46, 43, 43);
   border-bottom: 1px black solid;
+  text-overflow: "----"; 
+  white-space: nowrap; 
+  overflow: hidden;
 }
 
 .window-menu-content-label:hover {
@@ -559,6 +623,10 @@ h6:hover {
 
 .time:hover {
   background-color: rgb(181, 1, 181);
+}
+
+@media only screen and (max-width: 600px) {
+  
 }
 
 </style>
