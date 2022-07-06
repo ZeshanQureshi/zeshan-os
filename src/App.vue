@@ -40,7 +40,6 @@
             <li>🏫 I'm a Mechanical Engineering student at the University of Waterloo</li>
             <li>📚 I have finished my 2nd year</li>
             <li>💼 I am currently working at AutoVerify as a Software Developer</li>
-            <li>👀 I am interested in Software Development</li>
             <li>🌱 I am currently learning Object Oriented Programming</li>
             <li>📫 I can be contacted at <a href="mailto:z22qures@gmail.com?subject=Hello!" target="_blank">z22qures@gmail.com</a></li>
           </ul>
@@ -54,13 +53,77 @@
         </div>
       </div>
       <div v-else-if="fileName == 'Experience.txt'">
-        Experience
+        <div class="window-text-header">
+          Experience
+        </div>
+        <div class="window-experience-block">
+          <div class="window-experience-header"><b>Software Developer</b></div>
+          <div class="window-experience-time">May 2022 - Dec 2022</div>
+          <div class="window-experience-header">AutoVerify</div>
+          <div class="window-experience-time">London, Ontario</div>
+          <ul class="experience-list">
+            <li>Designed and implemented an Image Processing program in Python to extract and store image metadata</li>
+            <li>Performed routine back-end testing using PHPUnit to increase code converage by over 17 percent</li>
+            <li>Developed REST API using Node.js and MySQL to manage dealership data and improve retrieval time by 7 percent</li>
+          </ul>
+        </div>
+        <div class="window-experience-block">
+          <div class="window-experience-header"><b>Full Stack Developer</b></div>
+          <div class="window-experience-time">Jan 2022 - May 2022</div>
+          <div class="window-experience-header">Caribou Contests</div>
+          <div class="window-experience-time">St Catharines, Ontario</div>
+          <ul class="experience-list">
+            <li>Maintained phpMyAdmin account information database and set up an SQL index to reduce data retrieval time</li>
+            <li>Successfully set up and validated an eCommerce web page with PayPal integration to automate licensing purchases</li>
+            <li>Fixed bugs on existing web pages and implemented user interface enhancements that increased click-through rate</li>
+          </ul>
+        </div>
+        <div class="window-experience-block">
+          <div class="window-experience-header"><b>Systems Design Engineer</b></div>
+          <div class="window-experience-time">May 2021 - Sep 2021</div>
+          <div class="window-experience-header">Toyota Motor Manufacturing Canada</div>
+          <div class="window-experience-time">Cambridge, Ontario</div>
+          <ul class="experience-list">
+            <li>Optimized path layout for Automatic Guided Vehicles using root cause analysis to reduce delivery times by 18 percent</li>
+            <li>Developed pressure monitoring program for sealer sensors using Toyopuc PLC to reduce material usage by 4 percent</li>
+          </ul>
+        </div>
+        <div class="window-experience-block">
+          <div class="window-experience-header"><b>Teaching Assistant</b></div>
+          <div class="window-experience-time">Sep 2020 - Dec 2020</div>
+          <div class="window-experience-header">University of Waterloo</div>
+          <div class="window-experience-time">Waterloo, Ontario</div>
+          <ul class="experience-list">
+            <li>Collaborated with professors and fellow teaching assistants to deliver more than 80 virtual lectures and tutorials</li>
+          </ul>
+        </div>
+        <div class="window-experience-block">
+          <div class="window-experience-header"><b>Database Developer</b></div>
+          <div class="window-experience-time">Jan 2020 - May 2020</div>
+          <div class="window-experience-header">University of Waterloo</div>
+          <div class="window-experience-time">Waterloo, Ontario</div>
+          <ul class="experience-list">
+            <li>Created and populated tables in a Microsoft Access database to store more than 300 employee records</li>
+            <li>Developed 12 SQL queries that filter and display employee records to reduce fetching time by 80 percent</li>
+          </ul>
+        </div>
       </div>
       <div v-else-if="fileName == 'Projects.txt'">
-        Projects
+        <div class="window-text-header">
+          Projects
+        </div>
       </div>
       <div v-else-if="fileName == 'Skills.txt'">
-        Skills
+        <div class="window-text-header">
+          Skills
+        </div>
+        <div class="window-text">
+          <ul class="window-align-list">
+            <li><b>Languages</b>: HTML, CSS, JavaScript, SQL, PHP, Python, C++</li>
+            <li><b>Frameworks</b>: Vue.js, Node.js (Express), PHPUnit</li>
+            <li><b>Developer Tools</b>: Git, AWS, Docker, phpMyAdmin, Jira</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -472,6 +535,28 @@ ul {
   padding: 5px;
   box-sizing:border-box;
   display:inline-block
+}
+
+.window-experience-block {
+  padding: 10px 0 10px 0;
+}
+
+.window-experience-header {
+  width: 50%;
+  float: left;
+  text-align: left;
+}
+
+.window-experience-time {
+  width: 50%;
+  float: left;
+  text-align: right;
+}
+
+.experience-list {
+  margin-left: 0.75em;
+  text-align: left;
+  padding-left: 5px;
 }
 
 .desktop-app {
