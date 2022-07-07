@@ -114,15 +114,17 @@
         </div>
         <div class="window-experience-block">
           <div class="window-image">
-            <img class="window-image-me" src="../public/me.jpg">
+            <video height="80%" width="80%" class="video-player" controls="controls" preload="none" poster="../public/daily-crossword-thumbnail.png">
+              <source type="video/webm" src="../public/daily-crossword.mp4">
+            </video>
           </div>
-          <div class="window-projects-header"><b>Learn Chess</b></div>
-          <div class="window-projects-header">University of Waterloo</div>
+          <div class="window-projects-header"><b>Daily Crossword</b></div>
+          <div class="window-projects-header"><a href="https://zeshanqureshi.github.io/daily-crossword/" target="_blank">ZeshanQureshi.GitHub.io/Daily-Crossword</a></div>
           <ul class="experience-list">
-            <li>Created and populated tables in a Microsoft Access database to store more than 300 employee records</li>
-            <li>Developed 12 SQL queries that filter and display employee records to reduce fetching time by 80 percent</li>
+            <li>Designed a single-page crossword puzzle using HTML5 and CSS3 with JavaScript functionality</li>
+            <li>Maintained a responsive web design by using HTML grid layout to improve the user interface</li>
+            <li>Developed an interactive crossword puzzle by writing multiple JavaScript functions to improve user experience</li>
           </ul>
-
         </div>
       </div>
       <div v-else-if="fileName == 'Skills.txt'">
@@ -490,7 +492,7 @@ ul {
 }
 
 .window-full {
-  height: 100%;
+  height: calc(100vh - 50px);
   width: 100%;
   top: 0%;
   left: 0%;
@@ -550,7 +552,7 @@ ul {
 }
 
 .window-experience-block {
-  padding: 10px 0 10px 0;
+  padding: 0 0 20px 0;
 }
 
 .window-experience-header {
@@ -558,7 +560,6 @@ ul {
   float: left;
   text-align: left;
 }
-
 
 .window-experience-time {
   width: 50%;
@@ -574,6 +575,19 @@ ul {
 
 .window-projects-header {
   width: 100%;
+}
+
+.window-project-block {
+  padding: 0 0 60px 0;
+}
+
+.video-player {
+  max-height: 80%;
+  max-width: 80%;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .desktop-app {
