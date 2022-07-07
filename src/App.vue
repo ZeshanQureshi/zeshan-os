@@ -58,7 +58,7 @@
         </div>
         <div class="window-experience-block">
           <div class="window-experience-header"><b>Software Developer</b></div>
-          <div class="window-experience-time">May 2022 - Dec 2022</div>
+          <div class="window-experience-time">May 2022 - Current</div>
           <div class="window-experience-header">AutoVerify</div>
           <div class="window-experience-time">London, Ontario</div>
           <ul class="experience-list">
@@ -111,6 +111,18 @@
       <div v-else-if="fileName == 'Projects.txt'">
         <div class="window-text-header">
           Projects
+        </div>
+        <div class="window-experience-block">
+          <div class="window-image">
+            <img class="window-image-me" src="../public/me.jpg">
+          </div>
+          <div class="window-projects-header"><b>Learn Chess</b></div>
+          <div class="window-projects-header">University of Waterloo</div>
+          <ul class="experience-list">
+            <li>Created and populated tables in a Microsoft Access database to store more than 300 employee records</li>
+            <li>Developed 12 SQL queries that filter and display employee records to reduce fetching time by 80 percent</li>
+          </ul>
+
         </div>
       </div>
       <div v-else-if="fileName == 'Skills.txt'">
@@ -547,6 +559,7 @@ ul {
   text-align: left;
 }
 
+
 .window-experience-time {
   width: 50%;
   float: left;
@@ -557,6 +570,10 @@ ul {
   margin-left: 0.75em;
   text-align: left;
   padding-left: 5px;
+}
+
+.window-projects-header {
+  width: 100%;
 }
 
 .desktop-app {
