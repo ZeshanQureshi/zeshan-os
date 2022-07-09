@@ -126,6 +126,34 @@
             <li>Developed an interactive crossword puzzle by writing multiple JavaScript functions to improve user experience</li>
           </ul>
         </div>
+        <div class="window-experience-block">
+          <div class="window-image">
+            <video height="80%" width="80%" class="video-player" controls="controls" preload="none" poster="../public/sketch-board-thumbnail.png">
+              <source type="video/webm" src="../public/sketch-board.mp4">
+            </video>
+          </div>
+          <div class="window-projects-header"><b>Sketch Board</b></div>
+          <div class="window-projects-header"><a href="https://zeshanqureshi.github.io/sketch-board/" target="_blank">ZeshanQureshi.GitHub.io/Sketch-Board</a></div>
+          <ul class="experience-list">
+            <li>Designed a single-page dynamic sketch board using HTML5 and CSS3 with JavaScript functionality</li>
+            <li>Wrote code using JavaScript Document Object Model (DOM) manipulation to create smooth drawing animations</li>
+            <li>Utilized multiple JavaScript functions to create game features that enhanced the user interface</li>
+          </ul>
+        </div>
+        <div class="window-experience-block">
+          <div class="window-image">
+            <video height="80%" width="80%" class="video-player" controls="controls" preload="none" poster="../public/sketch-board-thumbnail.png">
+              <source type="video/webm" src="../public/sketch-board.mp4">
+            </video>
+          </div>
+          <div class="window-projects-header"><b>Online Calculator</b></div>
+          <div class="window-projects-header"><a href="https://zeshanqureshi.github.io/sketch-board/" target="_blank">ZeshanQureshi.GitHub.io/Sketch-Board</a></div>
+          <ul class="experience-list">
+            <li>Designed a single-page dynamic sketch board using HTML5 and CSS3 with JavaScript functionality</li>
+            <li>Wrote code using JavaScript Document Object Model (DOM) manipulation to create smooth drawing animations</li>
+            <li>Utilized multiple JavaScript functions to create game features that enhanced the user interface</li>
+          </ul>
+        </div>
       </div>
       <div v-else-if="fileName == 'Skills.txt'">
         <div class="window-text-header">
