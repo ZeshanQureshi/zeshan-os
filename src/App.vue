@@ -114,11 +114,25 @@
         </div>
         <div class="window-experience-block">
           <div class="window-image">
+            <video height="80%" width="80%" class="video-player" controls="controls" preload="none" poster="../public/learn-chess-thumbnail.png">
+              <source type="video/webm" src="../public/learn-chess.mp4">
+            </video>
+          </div>
+          <div class="window-projects-header" ><b>Learn Chess</b> | HTML, CSS, JavaScript, Vue.js, Node.js</div>
+          <div class="window-projects-header"><a href="https://learnchess.me" target="_blank">LearnChess.me</a></div>
+          <ul class="experience-list">
+            <li>A multi-page site to learn chess and purchase chess sets developed with HTML, CSS, Vue.js, and Node.js</li>
+            <li>Maintained a responsive web design and implemented smooth page animations to enchance the user experience </li>
+            <li>Checkout page authenticates credit cards via Stripe API and account information is handled by Google Firebase</li>
+          </ul>
+        </div>
+        <div class="window-experience-block">
+          <div class="window-image">
             <video height="80%" width="80%" class="video-player" controls="controls" preload="none" poster="../public/daily-crossword-thumbnail.png">
               <source type="video/webm" src="../public/daily-crossword.mp4">
             </video>
           </div>
-          <div class="window-projects-header"><b>Daily Crossword</b></div>
+          <div class="window-projects-header"><b>Daily Crossword</b> | HTML, CSS, JavaScript</div>
           <div class="window-projects-header"><a href="https://zeshanqureshi.github.io/daily-crossword/" target="_blank">ZeshanQureshi.GitHub.io/Daily-Crossword</a></div>
           <ul class="experience-list">
             <li>Designed a single-page crossword puzzle using HTML5 and CSS3 with JavaScript functionality</li>
@@ -132,7 +146,7 @@
               <source type="video/webm" src="../public/sketch-board.mp4">
             </video>
           </div>
-          <div class="window-projects-header"><b>Sketch Board</b></div>
+          <div class="window-projects-header"><b>Sketch Board</b> | HTML, CSS, JavaScript</div>
           <div class="window-projects-header"><a href="https://zeshanqureshi.github.io/sketch-board/" target="_blank">ZeshanQureshi.GitHub.io/Sketch-Board</a></div>
           <ul class="experience-list">
             <li>Designed a single-page dynamic sketch board using HTML5 and CSS3 with JavaScript functionality</li>
@@ -146,7 +160,7 @@
               <source type="video/webm" src="../public/online-calculator.mp4">
             </video>
           </div>
-          <div class="window-projects-header"><b>Online Calculator</b></div>
+          <div class="window-projects-header"><b>Online Calculator</b> | HTML, CSS, JavaScript</div>
           <div class="window-projects-header"><a href="https://zeshanqureshi.github.io/online-calculator/" target="_blank">ZeshanQureshi.GitHub.io/Online-Calculator</a></div>
           <ul class="experience-list">
             <li>Designed a single-page calculator using HTML5 and CSS3 with JavaScript functionality</li>
