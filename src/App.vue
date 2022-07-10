@@ -147,11 +147,11 @@
             </video>
           </div>
           <div class="window-projects-header"><b>Online Calculator</b></div>
-          <div class="window-projects-header"><a href="https://zeshanqureshi.github.io/sketch-board/" target="_blank">ZeshanQureshi.GitHub.io/Sketch-Board</a></div>
+          <div class="window-projects-header"><a href="https://zeshanqureshi.github.io/online-calculator/" target="_blank">ZeshanQureshi.GitHub.io/Online-Calculator</a></div>
           <ul class="experience-list">
-            <li>Designed a single-page dynamic sketch board using HTML5 and CSS3 with JavaScript functionality</li>
-            <li>Wrote code using JavaScript Document Object Model (DOM) manipulation to create smooth drawing animations</li>
-            <li>Utilized multiple JavaScript functions to create game features that enhanced the user interface</li>
+            <li>Designed a single-page calculator using HTML5 and CSS3 with JavaScript functionality</li>
+            <li>Wrote code using JavaScript Document Object Model (DOM) manipulation to create responsive buttons</li>
+            <li>Wrote multiple JavaScript functions to ensure correct computational logic was followed </li>
           </ul>
         </div>
       </div>
