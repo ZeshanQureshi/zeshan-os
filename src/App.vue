@@ -114,14 +114,10 @@
         </div>
         <div class="window-experience-block">
           <div class="window-image">
-            <video height="80%" width="80%" class="video-player" controls="controls" preload="none" poster="../public/learn-chess-thumbnail.png">
-              <source type="video/webm" src="../public/learn-chess.mp4">
-            </video>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/zWz1zb5ZZ9g?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="window-image">
-            <video width="20%" class="video-player" controls="controls" preload="none" poster="../public/learn-chess-mobile-thumbnail.jpg">
-              <source type="video/webm" src="../public/learn-chess-mobile.mp4">
-            </video>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/KePRS9G74m4?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="window-projects-header" ><b>Learn Chess</b> | HTML, CSS, JavaScript, Vue.js, Node.js</div>
           <div class="window-projects-header"><a href="https://learnchess.me" target="_blank">LearnChess.me</a></div>
@@ -133,9 +129,7 @@
         </div>
         <div class="window-experience-block">
           <div class="window-image">
-            <video height="80%" width="80%" class="video-player" controls="controls" preload="none" poster="../public/daily-crossword-thumbnail.png">
-              <source type="video/webm" src="../public/daily-crossword.mp4">
-            </video>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/BTnPpAaOpI4?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="window-projects-header"><b>Daily Crossword</b> | HTML, CSS, JavaScript</div>
           <div class="window-projects-header"><a href="https://zeshanqureshi.github.io/daily-crossword/" target="_blank">ZeshanQureshi.GitHub.io/Daily-Crossword</a></div>
@@ -147,9 +141,7 @@
         </div>
         <div class="window-experience-block">
           <div class="window-image">
-            <video height="80%" width="80%" class="video-player" controls="controls" preload="none" poster="../public/sketch-board-thumbnail.png">
-              <source type="video/webm" src="../public/sketch-board.mp4">
-            </video>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/gaM1Fq9zVsw?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="window-projects-header"><b>Sketch Board</b> | HTML, CSS, JavaScript</div>
           <div class="window-projects-header"><a href="https://zeshanqureshi.github.io/sketch-board/" target="_blank">ZeshanQureshi.GitHub.io/Sketch-Board</a></div>
@@ -161,9 +153,7 @@
         </div>
         <div class="window-experience-block">
           <div class="window-image">
-            <video height="80%" width="80%" class="video-player" controls="controls" preload="none" poster="../public/online-calculator-thumbnail.png">
-              <source type="video/webm" src="../public/online-calculator.mp4">
-            </video>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vF5Xn58rdIo?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="window-projects-header"><b>Online Calculator</b> | HTML, CSS, JavaScript</div>
           <div class="window-projects-header"><a href="https://zeshanqureshi.github.io/online-calculator/" target="_blank">ZeshanQureshi.GitHub.io/Online-Calculator</a></div>
@@ -628,7 +618,7 @@ ul {
   padding: 0 0 60px 0;
 }
 
-.video-player {
+iframe {
   max-height: 80%;
   max-width: 80%;
 
