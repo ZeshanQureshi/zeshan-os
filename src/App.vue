@@ -142,8 +142,8 @@
         </div>
         <div class="window-experience-block">
           <div class="window-image">
-            <video height="80%" width="80%" class="video-player" controls="controls" preload="none" poster="../public/sketch-board-thumbnail.png">
-              <source type="video/webm" src="../public/sketch-board.mp4">
+            <video height="80%" width="80%" class="video-player" controls="controls" preload="none" poster="../public/online-calculator-thumbnail.png">
+              <source type="video/webm" src="../public/online-calculator.mp4">
             </video>
           </div>
           <div class="window-projects-header"><b>Online Calculator</b></div>
