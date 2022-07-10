@@ -118,6 +118,11 @@
               <source type="video/webm" src="../public/learn-chess.mp4">
             </video>
           </div>
+          <div class="window-image">
+            <video width="20%" class="video-player" controls="controls" preload="none" poster="../public/learn-chess-mobile-thumbnail.jpg">
+              <source type="video/webm" src="../public/learn-chess-mobile.mp4">
+            </video>
+          </div>
           <div class="window-projects-header" ><b>Learn Chess</b> | HTML, CSS, JavaScript, Vue.js, Node.js</div>
           <div class="window-projects-header"><a href="https://learnchess.me" target="_blank">LearnChess.me</a></div>
           <ul class="experience-list">
