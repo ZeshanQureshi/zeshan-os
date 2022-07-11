@@ -38,7 +38,7 @@
             <li>👋 Hi, I’m Zeshan</li>
             <li>🗺️ I live in Toronto, Ontario</li>
             <li>🏫 I'm a Mechanical Engineering student at the University of Waterloo</li>
-            <li>📚 I have finished my 2nd year</li>
+            <li>📚 I will be entering my 3rd year in January 2023</li>
             <li>💼 I am currently working at AutoVerify as a Software Developer</li>
             <li>🌱 I am currently learning Object Oriented Programming</li>
             <li>📫 I can be contacted at <a href="mailto:z22qures@gmail.com?subject=Hello!" target="_blank">z22qures@gmail.com</a></li>
@@ -47,7 +47,7 @@
 
         <div class="window-text">
           <ul class="window-align-list">
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/zeshanq/" target="_blank">LinkedIn.com/in/ZeshanQ/</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/zeshanq/" target="_blank">LinkedIn.com/in/ZeshanQ</a></li>
             <li>GitHub: <a href="https://github.com/ZeshanQureshi" target="_blank">GitHub.com/ZeshanQureshi</a></li>
           </ul> 
         </div>
