@@ -404,7 +404,7 @@ html {
 }
 
 body {
-  background-image: url("../public/background.png");
+  background-image: url("../public/background.jpg");
   height: 100%;
   width: 100%;
 
@@ -423,11 +423,11 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: purple;
+  background-color: skyblue;
   color: white;
   text-align: center;
   height: 50px;
-  border-top: 1px solid rgb(75, 1, 75);
+  border-top: 1px solid rgb(101, 172, 200);
 
   box-sizing: border-box;
   user-select: none;
@@ -470,7 +470,7 @@ h6 {
 }
 
 h6:hover {
-  background-color: blueviolet;
+  background-color: rgb(101, 172, 200);
 }
 
 ul {
@@ -484,8 +484,8 @@ ul {
 .window {
   height: 50%;
   width: 50%;
-  border: 1px solid purple; 
-  background-color: purple;
+  border: 1px solid skyblue; 
+  background-color: skyblue;
   position: fixed;
   top: 25%;
   left: 25%;
@@ -551,7 +551,7 @@ ul {
 .window-menu-top {
   height: 25px;
   width: 100%;
-  background-color: purple;
+  background-color: skyblue;
   float: left;
   box-sizing:border-box;
 }
@@ -645,7 +645,7 @@ iframe {
   width: 60px;
   position: relative;
   float: left;
-  border-right: 1px solid rgb(75, 1, 75);
+  border-right: 1px solid rgb(101, 172, 200);
 }
 
 .start-tabs {
@@ -662,16 +662,16 @@ iframe {
 }
 
 .start-tabs-note:hover {
-  background-color: rgb(181, 1, 181);
+  background-color: rgb(101, 172, 200);
 }
 
 .start-tabs-open {
-  border-bottom: 5px solid rgb(75, 1, 75);
-  background-color: rgb(181, 1, 181);
+  border-bottom: 5px solid rgb(101, 172, 200);
+  background-color: rgb(186, 223, 238);
 }
 
 .start-tabs-minimized {
-  border-bottom: 5px solid rgb(75, 1, 75);
+  border-bottom: 5px solid rgb(101, 172, 200);
 }
 
 .start-tabs-icon {
@@ -686,8 +686,8 @@ iframe {
   height: 380px;
   width: 300px;
   bottom: 50px;
-  background-color: rgb(75, 1, 75);
-  border: 1px solid rgb(75, 1, 75);
+  background-color: rgb(101, 172, 200);
+  border: 1px solid rgb(101, 172, 200);
   border-bottom: none;
   z-index: 1;
 }
@@ -711,7 +711,7 @@ iframe {
 }
 
 .start-app:hover {
-  background-color: rgb(181, 1, 181);
+  background-color: rgb(159, 217, 240);
 }
 
 .start-app-icon {
@@ -739,7 +739,7 @@ iframe {
 }
 
 .start-power:hover {
-  background-color: rgb(181, 1, 181);
+  background-color: rgb(159, 217, 240);
 }
 
 .power-img {
@@ -749,7 +749,7 @@ iframe {
 }
 
 .start:hover {
-  background-color: rgb(181, 1, 181);
+  background-color: rgb(101, 172, 200);
 }
 
 .os {
@@ -771,11 +771,11 @@ iframe {
   float: left;
   text-align: center;
   line-height: 25px;
-  border-left: 1px solid rgb(75, 1, 75);
+  border-left: 1px solid rgb(101, 172, 200);
 }
 
 .time:hover {
-  background-color: rgb(181, 1, 181);
+  background-color: rgb(101, 172, 200);
 }
 
 @media only screen and (max-width: 600px) {
