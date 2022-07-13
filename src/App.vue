@@ -10,7 +10,7 @@
   </div>
   -->
 
-  <div v-show='windowState == "Open"' class="window animate__fadeInUp" :class='{ "window-full": windowSize == "Full" }' ref="draggableContainer" id="draggable-container">
+  <div v-show='windowState == "Open"' class="window" :class='{ "window-full": windowSize == "Full" }' ref="draggableContainer" id="draggable-container" >
     <div @mousedown="resizeWindow($event, 'ne')" class="window-resizer" :class='{ "ne":  windowSize != "Full" }'></div>
     <div @mousedown="resizeWindow($event, 'nw')" class="window-resizer" :class='{ "nw":  windowSize != "Full" }'></div>
     <div @mousedown="resizeWindow($event, 'sw')" class="window-resizer" :class='{ "sw":  windowSize != "Full" }'></div>
@@ -469,6 +469,23 @@ export default {
   vertical-align: baseline;
   background: transparent;
   font-family: 'Open Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: black; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: white; 
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(206, 206, 206); 
 }
 
 html {
