@@ -11,10 +11,10 @@
   -->
 
   <div v-show='windowState == "Open"' class="window animate__fadeInUp" :class='{ "window-full": windowSize == "Full" }' ref="draggableContainer" id="draggable-container">
-    <div @mousedown="resizeWindow" class="window-resizer ne"></div>
-    <div @mousedown="resizeWindow" class="window-resizer nw"></div>
-    <div @mousedown="resizeWindow" class="window-resizer sw"></div>
-    <div @mousedown="resizeWindow" class="window-resizer se"></div>
+    <div @mousedown="resizeWindow($event, 'ne')" class="window-resizer ne"></div>
+    <div @mousedown="resizeWindow($event, 'nw')" class="window-resizer nw"></div>
+    <div @mousedown="resizeWindow($event, 'sw')" class="window-resizer sw"></div>
+    <div @mousedown="resizeWindow($event, 'se')" class="window-resizer se"></div>
     <div class="window-menu">
       <div class="window-menu-top" id="draggable-header" @mousedown="dragMouseDown" @dblclick="windowSizing">
         <h2 class="window-tag">{{ fileName }}</h2>
@@ -266,7 +266,8 @@ export default {
         clientY: undefined,
         movementX: 0,
         movementY: 0
-      }
+      },
+      dragSide: undefined
     }
   },
   methods: {
@@ -373,14 +374,15 @@ export default {
         document.onmousemove = null
       }
     },
-    resizeWindow: function (event)  {
+    resizeWindow: function (event, type)  {
       if (this.windowSize != "Full") {
         event.preventDefault()
         //get the mouse cursor position at startup:
-        this.sizing.clientX = event.clientX
-        this.sizing.clientY = event.clientY
-        document.onmousemove = this.elementResize
-        document.onmouseup = this.closeDragElement
+        this.sizing.clientX = event.clientX;
+        this.sizing.clientY = event.clientY;
+        document.onmousemove = this.elementResize;
+        document.onmouseup = this.closeDragElement;
+        this.dragSide = type;
       }
     },
     elementResize: function (event) {
@@ -392,11 +394,24 @@ export default {
         this.sizing.clientY = event.clientY
         let currentWidth = document.getElementById('draggable-container').offsetWidth
         let currentHeight = document.getElementById('draggable-container').offsetHeight
-        console.log(this.$refs.draggableContainer.style.width);
-        console.log(this.$refs.draggableContainer.style.height);
         // set the element's new size:
-        document.getElementById('draggable-container').style.width = (currentWidth - this.sizing.movementX) + 'px'  
-        document.getElementById('draggable-container').style.height = (currentHeight - this.sizing.movementY) + 'px'
+        if (this.dragSide == "se") {
+          document.getElementById('draggable-container').style.width = (currentWidth - this.sizing.movementX) + 'px'  
+          document.getElementById('draggable-container').style.height = (currentHeight - this.sizing.movementY) + 'px'
+        } else if (this.dragSide == "ne") {
+          this.$refs.draggableContainer.style.top = (this.$refs.draggableContainer.offsetTop - this.sizing.movementY) + 'px'
+          document.getElementById('draggable-container').style.width = (currentWidth - this.sizing.movementX) + 'px'  
+          document.getElementById('draggable-container').style.height = (currentHeight + this.sizing.movementY) + 'px'
+        } else if (this.dragSide == "sw") {
+          this.$refs.draggableContainer.style.left = (this.$refs.draggableContainer.offsetLeft - this.sizing.movementX) + 'px'
+          document.getElementById('draggable-container').style.width = (currentWidth + this.sizing.movementX) + 'px'  
+          document.getElementById('draggable-container').style.height = (currentHeight - this.sizing.movementY) + 'px'
+        } else if (this.dragSide == "nw") {
+          this.$refs.draggableContainer.style.top = (this.$refs.draggableContainer.offsetTop - this.sizing.movementY) + 'px'
+          this.$refs.draggableContainer.style.left = (this.$refs.draggableContainer.offsetLeft - this.sizing.movementX) + 'px'
+          document.getElementById('draggable-container').style.width = (currentWidth + this.sizing.movementX) + 'px'  
+          document.getElementById('draggable-container').style.height = (currentHeight + this.sizing.movementY) + 'px'
+        }
       } 
     },
   },
