@@ -11,6 +11,10 @@
   -->
 
   <div v-show='windowState == "Open"' class="window animate__fadeInUp" :class='{ "window-full": windowSize == "Full" }' ref="draggableContainer" id="draggable-container">
+    <div @mousedown="resizeWindow" class="window-resizer ne"></div>
+    <div @mousedown="resizeWindow" class="window-resizer nw"></div>
+    <div @mousedown="resizeWindow" class="window-resizer sw"></div>
+    <div @mousedown="resizeWindow" class="window-resizer se"></div>
     <div class="window-menu">
       <div class="window-menu-top" id="draggable-header" @mousedown="dragMouseDown">
         <h2 class="window-tag">{{ fileName }}</h2>
@@ -254,6 +258,14 @@ export default {
         clientY: undefined,
         movementX: 0,
         movementY: 0
+      },
+      sizeX: undefined,
+      sizeY: undefined,
+      sizing: {
+        clientX: undefined,
+        clientY: undefined,
+        movementX: 0,
+        movementY: 0
       }
     }
   },
@@ -308,7 +320,6 @@ export default {
     },
     windowSizing() {
       if(this.windowSize == "Window") {
-        this.windowSize = "Full"
         this.saveY = this.$refs.draggableContainer.style.top;
         this.saveX = this.$refs.draggableContainer.style.left;
         this.$refs.draggableContainer.style.top = "0px";
@@ -325,7 +336,7 @@ export default {
     dragMouseDown: function (event) {
       if (this.windowSize != "Full") {
         event.preventDefault()
-      // get the mouse cursor position at startup:
+        //get the mouse cursor position at startup:
         this.positions.clientX = event.clientX
         this.positions.clientY = event.clientY
         document.onmousemove = this.elementDrag
@@ -354,7 +365,33 @@ export default {
         document.onmouseup = null
         document.onmousemove = null
       }
-    }
+    },
+    resizeWindow: function (event)  {
+      if (this.windowSize != "Full") {
+        event.preventDefault()
+        //get the mouse cursor position at startup:
+        this.sizing.clientX = event.clientX
+        this.sizing.clientY = event.clientY
+        document.onmousemove = this.elementResize
+        document.onmouseup = this.closeDragElement
+      }
+    },
+    elementResize: function (event) {
+      event.preventDefault()
+      if (this.windowSize != "Full") {
+        this.sizing.movementX = this.sizing.clientX - event.clientX
+        this.sizing.movementY = this.sizing.clientY - event.clientY
+        this.sizing.clientX = event.clientX
+        this.sizing.clientY = event.clientY
+        let currentWidth = document.getElementById('draggable-container').offsetWidth
+        let currentHeight = document.getElementById('draggable-container').offsetHeight
+        console.log(this.$refs.draggableContainer.style.width);
+        console.log(this.$refs.draggableContainer.style.height);
+        // set the element's new size:
+        document.getElementById('draggable-container').style.width = (currentWidth - this.sizing.movementX) + 'px'  
+        document.getElementById('draggable-container').style.height = (currentHeight - this.sizing.movementY) + 'px'
+      } 
+    },
   },
   directives: {
     clickOutside: vClickOutside.directive
@@ -486,14 +523,47 @@ ul {
   width: 50%;
   border: 1px solid skyblue; 
   background-color: skyblue;
-  position: fixed;
+  position: absolute;
   top: 25%;
   left: 25%;
   box-sizing: border-box;
   -moz-box-shadow: 0 0 3px black;
   -webkit-box-shadow: 0 0 3px black;
   box-shadow: 0 0 3px black;
-  z-index: 10;
+  z-index: 2;
+}
+
+.window-resizer {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: black;
+  z-index: 100;
+}
+
+.nw {
+  top: -1px;
+  left: -1px;
+  cursor: nw-resize;
+}
+
+.ne {
+  top: -1px;
+  right: -1px;
+  cursor: ne-resize;
+}
+
+.sw {
+  bottom: -1px;
+  left: -1px;
+  cursor: sw-resize;
+}
+
+.se {
+  bottom: -1px;
+  right: -1px;
+  cursor: se-resize;
 }
 
 .window-text-header {
