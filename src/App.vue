@@ -145,7 +145,7 @@
         </div>
         <div class="window-experience-block">
           <div class="window-image">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/gaM1Fq9zVsw?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="mobile-view" width="560" height="315" src="https://www.youtube.com/embed/gaM1Fq9zVsw?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="window-projects-header"><b>Sketch Board</b> | HTML, CSS, JavaScript</div>
           <div class="window-projects-header"><a href="https://zeshanqureshi.github.io/sketch-board/" target="_blank">ZeshanQureshi.GitHub.io/Sketch-Board</a></div>
@@ -923,6 +923,15 @@ iframe {
   ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
+  }
+
+  .window-image {
+    padding:unset;
+  }
+
+  iframe {
+    max-width:none;
+    width: 95%;
   }
 }
 
