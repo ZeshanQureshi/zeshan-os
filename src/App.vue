@@ -545,7 +545,6 @@ ul {
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background-color: black;
   z-index: 100;
 }
 
