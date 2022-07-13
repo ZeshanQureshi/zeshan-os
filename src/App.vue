@@ -11,10 +11,10 @@
   -->
 
   <div v-show='windowState == "Open"' class="window animate__fadeInUp" :class='{ "window-full": windowSize == "Full" }' ref="draggableContainer" id="draggable-container">
-    <div @mousedown="resizeWindow($event, 'ne')" class="window-resizer ne"></div>
-    <div @mousedown="resizeWindow($event, 'nw')" class="window-resizer nw"></div>
-    <div @mousedown="resizeWindow($event, 'sw')" class="window-resizer sw"></div>
-    <div @mousedown="resizeWindow($event, 'se')" class="window-resizer se"></div>
+    <div @mousedown="resizeWindow($event, 'ne')" class="window-resizer" :class='{ "ne":  windowSize != "Full" }'></div>
+    <div @mousedown="resizeWindow($event, 'nw')" class="window-resizer" :class='{ "nw":  windowSize != "Full" }'></div>
+    <div @mousedown="resizeWindow($event, 'sw')" class="window-resizer" :class='{ "sw":  windowSize != "Full" }'></div>
+    <div @mousedown="resizeWindow($event, 'se')" class="window-resizer" :class='{ "se":  windowSize != "Full" }'></div>
     <div class="window-menu">
       <div class="window-menu-top" id="draggable-header" @mousedown="dragMouseDown" @dblclick="windowSizing">
         <h2 class="window-tag">{{ fileName }}</h2>
@@ -23,14 +23,14 @@
         <h6 @click="minimizeWindow">−</h6>
       </div>
       <div class="window-menu-content">
-        <div class="window-menu-content-label" :class='{ "window-active-tab": fileName == "AboutMe.txt" }' @click="changeText('AboutMe.txt')">AboutMe.txt</div>
-        <div class="window-menu-content-label" :class='{ "window-active-tab": fileName == "Experience.txt" }' @click="changeText('Experience.txt')">Experience.txt</div>
-        <div class="window-menu-content-label" :class='{ "window-active-tab": fileName == "Projects.txt" }' @click="changeText('Projects.txt')">Projects.txt</div>
-        <div class="window-menu-content-label" :class='{ "window-active-tab": fileName == "Skills.txt" }' @click="changeText('Skills.txt')">Skills.txt</div>
+        <div class="window-menu-content-label" :class='{ "window-active-tab": fileName == "AboutMe" }' @click="changeText('AboutMe')">AboutMe</div>
+        <div class="window-menu-content-label" :class='{ "window-active-tab": fileName == "Experience" }' @click="changeText('Experience')">Experience</div>
+        <div class="window-menu-content-label" :class='{ "window-active-tab": fileName == "Projects" }' @click="changeText('Projects')">Projects</div>
+        <div class="window-menu-content-label" :class='{ "window-active-tab": fileName == "Skills" }' @click="changeText('Skills')">Skills</div>
       </div>
     </div>
     <div class="window-content">
-      <div v-if="fileName == 'AboutMe.txt'">
+      <div v-if="fileName == 'AboutMe'">
         <div class="window-text-header">
           About Me
         </div> 
@@ -56,7 +56,7 @@
           </ul> 
         </div>
       </div>
-      <div v-else-if="fileName == 'Experience.txt'">
+      <div v-else-if="fileName == 'Experience'">
         <div class="window-text-header">
           Experience
         </div>
@@ -112,7 +112,7 @@
           </ul>
         </div>
       </div>
-      <div v-else-if="fileName == 'Projects.txt'">
+      <div v-else-if="fileName == 'Projects'">
         <div class="window-text-header">
           Projects
         </div>
@@ -168,7 +168,7 @@
           </ul>
         </div>
       </div>
-      <div v-else-if="fileName == 'Skills.txt'">
+      <div v-else-if="fileName == 'Skills'">
         <div class="window-text-header">
           Skills
         </div>
@@ -198,30 +198,30 @@
 
       <div class="start-application">
         <div class="start-label"><h5>A</h5></div>
-        <div class="start-app"  @click="displayWindow('AboutMe.txt')" ondragstart="return false" ondrop="return false">
+        <div class="start-app"  @click="displayWindow('AboutMe')" ondragstart="return false" ondrop="return false">
           <img class="start-app-icon" src="../public/notepad.png">
-          <h4>AboutMe.txt</h4>
+          <h4>AboutMe</h4>
         </div>
         <div class="start-label"><h5>E</h5></div>
-        <div class="start-app" @click="displayWindow('Experience.txt')" ondragstart="return false" ondrop="return false">
+        <div class="start-app" @click="displayWindow('Experience')" ondragstart="return false" ondrop="return false">
           <img class="start-app-icon" src="../public/notepad.png">
-          <h4>Experience.txt</h4>
+          <h4>Experience</h4>
         </div>
         <div class="start-label"><h5>P</h5></div>
-        <div class="start-app" @click="displayWindow('Projects.txt')" ondragstart="return false" ondrop="return false">
+        <div class="start-app" @click="displayWindow('Projects')" ondragstart="return false" ondrop="return false">
           <img class="start-app-icon" src="../public/notepad.png">
-          <h4>Projects.txt</h4>
+          <h4>Projects</h4>
         </div>
         <div class="start-label"><h5>S</h5></div>
-        <div class="start-app" @click="displayWindow('Skills.txt')" ondragstart="return false" ondrop="return false">
+        <div class="start-app" @click="displayWindow('Skills')" ondragstart="return false" ondrop="return false">
           <img class="start-app-icon" src="../public/notepad.png">
-          <h4>Skills.txt</h4>
+          <h4>Skills</h4>
         </div>
       </div>   
     </div>
 
     <div class="start-tabs">
-      <div class="start-tabs-note" @click="startWindow('AboutMe.txt')" 
+      <div class="start-tabs-note" @click="startWindow('AboutMe')" 
       :class='{ "start-tabs-open": windowState == "Open", "start-tabs-minimized": windowState == "Minimized"  }' ondragstart="return false" ondrop="return false">
         <img class="start-tabs-icon" src="../public/notepad.png">
       </div>
@@ -312,7 +312,7 @@ export default {
     startWindow() {
       if (this.windowState == "Close") {
         this.windowState = "Open";
-        this.fileName = "AboutMe.txt";
+        this.fileName = "AboutMe";
       } else if (this.windowState == "Minimized") {
         this.windowState = "Open";
       } else {
