@@ -170,6 +170,9 @@
         <div class="window-experience-block">
           <div class="window-projects-header"><b>ZeshanOS</b> | HTML, CSS, JavaScript, Vue.js</div>
           <div class="window-projects-header"><a href="https://github.com/ZeshanQureshi/zeshan-os" target="_blank">GitHub.com/ZeshanQureshi/Zeshan-OS</a></div>
+          <ul class="experience-list">
+            <li>View the source files for ZeshanOS</li>
+          </ul>
         </div>
       </div>
       <div v-else-if="fileName == 'Skills'">
