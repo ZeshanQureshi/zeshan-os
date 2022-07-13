@@ -488,6 +488,7 @@ export default {
 
 ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -917,6 +918,11 @@ iframe {
 @media only screen and (max-width: 600px) {
   .window-content {
     padding-bottom: 50px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
   }
 }
 
