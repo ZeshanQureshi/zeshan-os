@@ -883,7 +883,9 @@ iframe {
 }
 
 @media only screen and (max-width: 600px) {
-  
+  .window-content {
+    padding-bottom: 50px;
+  }
 }
 
 </style>
