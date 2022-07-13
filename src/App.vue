@@ -320,15 +320,21 @@ export default {
     },
     windowSizing() {
       if(this.windowSize == "Window") {
-        this.windowSize = "Full"
+        this.sizeX = document.getElementById('draggable-container').offsetWidth;
+        this.sizeY = document.getElementById('draggable-container').offsetHeight;
         this.saveY = this.$refs.draggableContainer.style.top;
         this.saveX = this.$refs.draggableContainer.style.left;
+        this.windowSize = "Full"
         this.$refs.draggableContainer.style.top = "0px";
         this.$refs.draggableContainer.style.left = "0px";
+        document.getElementById('draggable-container').style.width = screen.width + 'px';
+        document.getElementById('draggable-container').style.height = (screen.height - 50) + 'px';
       } else {
         this.windowSize = "Window"
         this.$refs.draggableContainer.style.top = this.saveY;
         this.$refs.draggableContainer.style.left = this.saveX;
+        document.getElementById('draggable-container').style.width = this.sizeX + 'px';
+        document.getElementById('draggable-container').style.height = this.sizeY + 'px';
       }
     },
     closeOS() {
