@@ -394,24 +394,37 @@ export default {
         this.sizing.clientY = event.clientY
         let currentWidth = document.getElementById('draggable-container').offsetWidth
         let currentHeight = document.getElementById('draggable-container').offsetHeight
+        console.log()
         // set the element's new size:
-          if (this.dragSide == "se") {
+        if (this.dragSide == "se" && (currentHeight - this.sizing.movementY) > 100 && (currentWidth - this.sizing.movementX) > 175) {
           document.getElementById('draggable-container').style.width = (currentWidth - this.sizing.movementX) + 'px'  
           document.getElementById('draggable-container').style.height = (currentHeight - this.sizing.movementY) + 'px'
-          } else if (this.dragSide == "ne") {
+        } else if (this.dragSide == "ne" && (currentHeight + this.sizing.movementY) > 100 && (currentWidth - this.sizing.movementX) > 175) {
           this.$refs.draggableContainer.style.top = (this.$refs.draggableContainer.offsetTop - this.sizing.movementY) + 'px'
           document.getElementById('draggable-container').style.width = (currentWidth - this.sizing.movementX) + 'px'  
           document.getElementById('draggable-container').style.height = (currentHeight + this.sizing.movementY) + 'px'
-          } else if (this.dragSide == "sw") {
+        } else if (this.dragSide == "sw" && (currentHeight - this.sizing.movementY) > 100 && (currentWidth + this.sizing.movementX) > 175) {
           this.$refs.draggableContainer.style.left = (this.$refs.draggableContainer.offsetLeft - this.sizing.movementX) + 'px'
           document.getElementById('draggable-container').style.width = (currentWidth + this.sizing.movementX) + 'px'  
           document.getElementById('draggable-container').style.height = (currentHeight - this.sizing.movementY) + 'px'
-          } else if (this.dragSide == "nw") {
+        } else if (this.dragSide == "nw" && (currentHeight + this.sizing.movementY) > 100 && (currentWidth + this.sizing.movementX) > 175) {
           this.$refs.draggableContainer.style.top = (this.$refs.draggableContainer.offsetTop - this.sizing.movementY) + 'px'
           this.$refs.draggableContainer.style.left = (this.$refs.draggableContainer.offsetLeft - this.sizing.movementX) + 'px'
           document.getElementById('draggable-container').style.width = (currentWidth + this.sizing.movementX) + 'px'  
           document.getElementById('draggable-container').style.height = (currentHeight + this.sizing.movementY) + 'px'
-          }
+        }
+        if (document.getElementById('draggable-container').offsetTop < 0) {
+          this.$refs.draggableContainer.style.top = '0px';
+        }
+        if (document.getElementById('draggable-container').offsetLeft < 0) {
+          this.$refs.draggableContainer.style.left = '0px';
+        }
+        if (window.innerWidth - document.getElementById('draggable-container').offsetWidth - document.getElementById('draggable-container').offsetLeft < 0) {
+          this.$refs.draggableContainer.style.left = (window.innerWidth) - document.getElementById('draggable-container').offsetWidth + 'px';
+        }
+        if (window.innerHeight - document.getElementById('draggable-container').offsetHeight - document.getElementById('draggable-container').offsetTop -50< 0) {
+          this.$refs.draggableContainer.style.top = (window.innerHeight) - 50 - document.getElementById('draggable-container').offsetHeight + 'px';
+        }
       } 
     },
   },
