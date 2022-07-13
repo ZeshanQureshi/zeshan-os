@@ -9,7 +9,7 @@
     <h2>Rubiks Algo</h2>
   </div>
   -->
-
+  <Transition name="slide-fade">
   <div v-show='windowState == "Open"' class="window" :class='{ "window-full": windowSize == "Full" }' ref="draggableContainer" id="draggable-container" >
     <div @mousedown="resizeWindow($event, 'ne')" class="window-resizer" :class='{ "ne":  windowSize != "Full" }'></div>
     <div @mousedown="resizeWindow($event, 'nw')" class="window-resizer" :class='{ "nw":  windowSize != "Full" }'></div>
@@ -182,6 +182,7 @@
       </div>
     </div>
   </div>
+  </Transition>
 
   <footer>
     <div class="start" @click="toggleBar" ondragstart="return false" ondrop="return false">
@@ -457,6 +458,20 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.slide-fade-enter-active {
+  transition: all 0.7s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.7s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(10%);
+  opacity: 0;
+}
 
 * {
   margin: 0;
