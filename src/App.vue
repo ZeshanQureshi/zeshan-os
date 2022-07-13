@@ -42,7 +42,6 @@
             <li>👋 Hi, I’m Zeshan</li>
             <li>🗺️ I live in Toronto, Ontario</li>
             <li>🏫 I'm a Mechanical Engineering student at the University of Waterloo</li>
-            <li>📚 I will be entering my 3rd year in January 2023</li>
             <li>💼 I am currently working at AutoVerify as a Software Developer</li>
             <li>🌱 I am currently learning Object Oriented Programming</li>
             <li>📫 I can be contacted at <a href="mailto:z22qures@gmail.com?subject=Hello!" target="_blank">z22qures@gmail.com</a></li>
