@@ -16,7 +16,7 @@
     <div @mousedown="resizeWindow" class="window-resizer sw"></div>
     <div @mousedown="resizeWindow" class="window-resizer se"></div>
     <div class="window-menu">
-      <div class="window-menu-top" id="draggable-header" @mousedown="dragMouseDown">
+      <div class="window-menu-top" id="draggable-header" @mousedown="dragMouseDown" @dblclick="windowSizing">
         <h2 class="window-tag">{{ fileName }}</h2>
         <h6 class="window-close" @click="closeWindow">×</h6>
         <h6 @click="windowSizing">❑</h6>
@@ -320,6 +320,7 @@ export default {
     },
     windowSizing() {
       if(this.windowSize == "Window") {
+        this.windowSize = "Full"
         this.saveY = this.$refs.draggableContainer.style.top;
         this.saveX = this.$refs.draggableContainer.style.left;
         this.$refs.draggableContainer.style.top = "0px";
