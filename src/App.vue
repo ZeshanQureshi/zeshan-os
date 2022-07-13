@@ -167,6 +167,10 @@
             <li>Wrote multiple JavaScript functions to ensure correct computational logic was followed </li>
           </ul>
         </div>
+        <div class="window-experience-block">
+          <div class="window-projects-header"><b>ZeshanOS</b> | HTML, CSS, JavaScript, Vue.js</div>
+          <div class="window-projects-header"><a href="https://github.com/ZeshanQureshi/zeshan-os" target="_blank">GitHub.com/ZeshanQureshi/Zeshan-OS</a></div>
+        </div>
       </div>
       <div v-else-if="fileName == 'Skills'">
         <div class="window-text-header">
@@ -176,7 +180,7 @@
           <ul class="window-align-list">
             <li><b>Languages</b>: HTML, CSS, JavaScript, SQL, PHP, Python, C++</li>
             <li><b>Frameworks</b>: Vue.js, Node.js (Express), PHPUnit</li>
-            <li><b>Developer Tools</b>: Git, AWS, Docker, phpMyAdmin, Jira</li>
+            <li><b>Developer Tools</b>: Git, AWS, Docker, Bash, Figma</li>
           </ul>
         </div>
       </div>
