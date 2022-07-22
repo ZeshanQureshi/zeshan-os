@@ -40,9 +40,9 @@
         <div class="window-text">
           <ul class="window-align-list">
             <li>👋 Hi, I’m Zeshan</li>
-            <li>🗺️ I live in Toronto, Ontario</li>
-            <li>🏫 I'm a Mechanical Engineering student at the University of Waterloo</li>
-            <li>💼 I am currently working at AutoVerify as a Software Developer</li>
+            <li>🗺️ I live in Mississauga, Ontario</li>
+            <li>🏫 I'm a Mechanical Engineering student at the <a href="https://uwaterloo.ca/" target="_blank">University of Waterloo</a></li>
+            <li>💼 I am currently working at <a href="https://www.autoverify.com/" target="_blank">AutoVerify</a> as a Software Developer</li>
             <li>🌱 I am currently learning Object Oriented Programming</li>
             <li>📫 I can be contacted at <a href="mailto:z22qures@gmail.com?subject=Hello!" target="_blank">z22qures@gmail.com</a></li>
           </ul>
@@ -62,18 +62,17 @@
         <div class="window-experience-block">
           <div class="window-experience-header"><b>Software Developer</b></div>
           <div class="window-experience-time">May 2022 - Current</div>
-          <div class="window-experience-header">AutoVerify</div>
+          <div class="window-experience-header"><a href="https://www.autoverify.com/" target="_blank">AutoVerify</a></div>
           <div class="window-experience-time">London, Ontario</div>
           <ul class="experience-list">
-            <li>Designed and implemented an Image Processing program in Python to extract and store image metadata</li>
-            <li>Performed routine back-end testing using PHPUnit to increase code converage by over 17 percent</li>
+            <li>Performed routine back-end testing using PHPUnit to increase code converage by over 23 percent</li>
             <li>Developed REST API using Node.js and MySQL to manage dealership data and improve retrieval time by 7 percent</li>
           </ul>
         </div>
         <div class="window-experience-block">
           <div class="window-experience-header"><b>Full Stack Developer</b></div>
           <div class="window-experience-time">Jan 2022 - May 2022</div>
-          <div class="window-experience-header">Caribou Contests</div>
+          <div class="window-experience-header"><a href="https://cariboutests.com/" target="_blank">Caribou Contests</a></div>
           <div class="window-experience-time">St Catharines, Ontario</div>
           <ul class="experience-list">
             <li>Maintained phpMyAdmin account information database and set up an SQL index to reduce data retrieval time</li>
@@ -84,7 +83,7 @@
         <div class="window-experience-block">
           <div class="window-experience-header"><b>Systems Design Engineer</b></div>
           <div class="window-experience-time">May 2021 - Sep 2021</div>
-          <div class="window-experience-header">Toyota Motor Manufacturing Canada</div>
+          <div class="window-experience-header"><a href="https://tmmc.ca/en/" target="_blank">Toyota Motor Manufacturing Canada</a></div>
           <div class="window-experience-time">Cambridge, Ontario</div>
           <ul class="experience-list">
             <li>Optimized path layout for Automatic Guided Vehicles using root cause analysis to reduce delivery times by 18 percent</li>
@@ -94,7 +93,7 @@
         <div class="window-experience-block">
           <div class="window-experience-header"><b>Teaching Assistant</b></div>
           <div class="window-experience-time">Sep 2020 - Dec 2020</div>
-          <div class="window-experience-header">University of Waterloo</div>
+          <div class="window-experience-header"><a href="https://uwaterloo.ca/" target="_blank">University of Waterloo</a></div>
           <div class="window-experience-time">Waterloo, Ontario</div>
           <ul class="experience-list">
             <li>Collaborated with professors and fellow teaching assistants to deliver more than 80 virtual lectures and tutorials</li>
@@ -103,7 +102,7 @@
         <div class="window-experience-block">
           <div class="window-experience-header"><b>Database Developer</b></div>
           <div class="window-experience-time">Jan 2020 - May 2020</div>
-          <div class="window-experience-header">University of Waterloo</div>
+          <div class="window-experience-header"><a href="https://uwaterloo.ca/" target="_blank">University of Waterloo</a></div>
           <div class="window-experience-time">Waterloo, Ontario</div>
           <ul class="experience-list">
             <li>Created and populated tables in a Microsoft Access database to store more than 300 employee records</li>
@@ -122,8 +121,7 @@
           <div class="window-image">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/KePRS9G74m4?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <div class="window-projects-header" ><b>Learn Chess</b> | HTML, CSS, JavaScript, Vue.js, Node.js</div>
-          <div class="window-projects-header"><a href="https://learnchess.me" target="_blank">LearnChess.me</a></div>
+          <div class="window-projects-header" ><b><a href="https://learnchess.me" target="_blank">Learn Chess</a></b> | HTML, CSS, JavaScript, Vue.js, Node.js</div>
           <ul class="experience-list">
             <li>A multi-page site to learn chess and purchase chess sets developed with HTML, CSS, Vue.js, and Node.js</li>
             <li>Maintained a responsive web design and implemented smooth page animations to enchance the user experience </li>
@@ -134,8 +132,7 @@
           <div class="window-image">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/BTnPpAaOpI4?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <div class="window-projects-header"><b>Daily Crossword</b> | HTML, CSS, JavaScript</div>
-          <div class="window-projects-header"><a href="https://zeshanqureshi.github.io/daily-crossword/" target="_blank">ZeshanQureshi.GitHub.io/Daily-Crossword</a></div>
+          <div class="window-projects-header"><b><a href="https://zeshanqureshi.github.io/daily-crossword/" target="_blank">Daily Crossword</a></b> | HTML, CSS, JavaScript</div>
           <ul class="experience-list">
             <li>Designed a single-page crossword puzzle using HTML5 and CSS3 with JavaScript functionality</li>
             <li>Maintained a responsive web design by using HTML grid layout to improve the user interface</li>
@@ -146,8 +143,7 @@
           <div class="window-image">
             <iframe class="mobile-view" width="560" height="315" src="https://www.youtube.com/embed/gaM1Fq9zVsw?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <div class="window-projects-header"><b>Sketch Board</b> | HTML, CSS, JavaScript</div>
-          <div class="window-projects-header"><a href="https://zeshanqureshi.github.io/sketch-board/" target="_blank">ZeshanQureshi.GitHub.io/Sketch-Board</a></div>
+          <div class="window-projects-header"><b><a href="https://zeshanqureshi.github.io/sketch-board/" target="_blank">Sketch Board</a></b> | HTML, CSS, JavaScript</div>
           <ul class="experience-list">
             <li>Designed a single-page dynamic sketch board using HTML5 and CSS3 with JavaScript functionality</li>
             <li>Wrote code using JavaScript Document Object Model (DOM) manipulation to create smooth drawing animations</li>
@@ -158,8 +154,7 @@
           <div class="window-image">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/vF5Xn58rdIo?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <div class="window-projects-header"><b>Online Calculator</b> | HTML, CSS, JavaScript</div>
-          <div class="window-projects-header"><a href="https://zeshanqureshi.github.io/online-calculator/" target="_blank">ZeshanQureshi.GitHub.io/Online-Calculator</a></div>
+          <div class="window-projects-header"><b><a href="https://zeshanqureshi.github.io/online-calculator/" target="_blank">Online Calculator</a></b> | HTML, CSS, JavaScript</div>
           <ul class="experience-list">
             <li>Designed a single-page calculator using HTML5 and CSS3 with JavaScript functionality</li>
             <li>Wrote code using JavaScript Document Object Model (DOM) manipulation to create responsive buttons</li>
@@ -167,8 +162,7 @@
           </ul>
         </div>
         <div class="window-experience-block">
-          <div class="window-projects-header"><b>ZeshanOS</b> | HTML, CSS, JavaScript, Vue.js</div>
-          <div class="window-projects-header"><a href="https://github.com/ZeshanQureshi/zeshan-os" target="_blank">GitHub.com/ZeshanQureshi/Zeshan-OS</a></div>
+          <div class="window-projects-header"><b><a href="https://github.com/ZeshanQureshi/zeshan-os" target="_blank">ZeshanOS</a></b> | HTML, CSS, JavaScript, Vue.js</div>
           <ul class="experience-list">
             <li>View the source files for ZeshanOS</li>
           </ul>
@@ -180,7 +174,7 @@
         </div>
         <div class="window-text">
           <ul class="window-align-list">
-            <li><b>Languages</b>: HTML, CSS, JavaScript, SQL, PHP, Python, C++</li>
+            <li><b>Languages</b>: HTML, CSS, JavaScript, SQL, PHP, Python</li>
             <li><b>Frameworks</b>: Vue.js, Node.js (Express), PHPUnit</li>
             <li><b>Developer Tools</b>: Git, AWS, Docker, Bash, Figma</li>
           </ul>
