@@ -65,8 +65,9 @@
           <div class="window-experience-header"><a href="https://www.autoverify.com/" target="_blank">AutoVerify</a></div>
           <div class="window-experience-time">London, Ontario</div>
           <ul class="experience-list">
-            <li>Performed routine back-end testing using PHPUnit to increase code converage by over 23 percent</li>
-            <li>Developed REST API using Node.js and MySQL to manage dealership data and improve retrieval time by 7 percent</li>
+            <li>Tested new and existing back-end services with PHPUnit to increase code converage by over 23 percent</li>
+            <li>Developed a one time password microservice in PHP using Twilio to reduce authentication costs by 45 percent</li>
+            <li>Set up a developer onboarding project to support new interns as they learn the company stack and technologies</li>
           </ul>
         </div>
         <div class="window-experience-block">
