@@ -117,10 +117,7 @@
         </div>
         <div class="window-experience-block">
           <div class="window-image">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/zWz1zb5ZZ9g?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="window-image">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/KePRS9G74m4?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/I4dFFZX092Y?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="window-projects-header" ><b><a href="https://learnchess.me" target="_blank">Learn Chess</a></b> | HTML, CSS, JavaScript, Vue.js, Node.js</div>
           <ul class="experience-list">
