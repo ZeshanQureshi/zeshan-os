@@ -84,8 +84,8 @@
         <div class="window-experience-block">
           <div class="window-experience-header"><b>Systems Design Engineer</b></div>
           <div class="window-experience-time">May 2021 - Sep 2021</div>
-          <div class="window-experience-header"><a href="https://tmmc.ca/en/" target="_blank">Toyota Motor Manufacturing Canada</a></div>
-          <div class="window-experience-time">Cambridge, Ontario</div>
+          <div class="window-experience-long-header"><a href="https://tmmc.ca/en/" target="_blank">Toyota Motor Manufacturing Canada</a></div>
+          <div class="window-experience-long-time">Cambridge, Ontario</div>
           <ul class="experience-list">
             <li>Optimized path layout for Automatic Guided Vehicles using root cause analysis to reduce delivery times by 18 percent</li>
             <li>Developed pressure monitoring program for sealer sensors using Toyopuc PLC to reduce material usage by 4 percent</li>
@@ -728,13 +728,25 @@ ul {
 }
 
 .window-experience-header {
-  width: 50%;
+  width: 53%;
   float: left;
   text-align: left;
 }
 
 .window-experience-time {
-  width: 50%;
+  width: 47%;
+  float: left;
+  text-align: right;
+}
+
+.window-experience-long-header {
+  width: 53%;
+  float: left;
+  text-align: left;
+}
+
+.window-experience-long-time {
+  width: 47%;
   float: left;
   text-align: right;
 }
@@ -930,6 +942,18 @@ iframe {
   iframe {
     max-width:none;
     width: 95%;
+  }
+
+  .window-experience-long-header {
+    width: 100%;
+    float: left;
+    text-align: left;
+  }
+
+  .window-experience-long-time {
+    width: 100%;
+    float: left;
+    text-align: left;
   }
 }
 
