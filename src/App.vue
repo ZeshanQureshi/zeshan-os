@@ -60,10 +60,14 @@
           Experience
         </div>
         <div class="window-experience-block">
-          <div class="window-experience-header"><b>Software Developer</b></div>
-          <div class="window-experience-time">May 2022 - Current</div>
-          <div class="window-experience-header"><a href="https://www.autoverify.com/" target="_blank">AutoVerify</a></div>
-          <div class="window-experience-time">London, Ontario</div>
+          <div class="window-experience-header">
+            <span><b>Software Developer</b></span>
+            <span>May 2022 - Current</span>
+          </div>
+          <div class="window-experience-header">
+            <span><a href="https://www.autoverify.com/" target="_blank">AutoVerify</a></span>
+            <span>London, Ontario</span>
+          </div>
           <ul class="experience-list">
             <li>Tested new and existing back-end services with PHPUnit to increase code converage by over 23 percent</li>
             <li>Developed a one time password microservice in PHP using Twilio to reduce authentication costs by 45 percent</li>
@@ -71,10 +75,14 @@
           </ul>
         </div>
         <div class="window-experience-block">
-          <div class="window-experience-header"><b>Full Stack Developer</b></div>
-          <div class="window-experience-time">Jan 2022 - May 2022</div>
-          <div class="window-experience-header"><a href="https://cariboutests.com/" target="_blank">Caribou Contests</a></div>
-          <div class="window-experience-time">St Catharines, Ontario</div>
+          <div class="window-experience-header">
+            <span><b>Full Stack Developer</b></span>
+            <span>Jan 2022 - May 2022</span>
+          </div>
+          <div class="window-experience-header">
+            <span><a href="https://cariboutests.com/" target="_blank">Caribou Contests</a></span>
+            <span>St Catharines, Ontario</span>
+          </div>
           <ul class="experience-list">
             <li>Maintained phpMyAdmin account information database and set up an SQL index to reduce data retrieval time</li>
             <li>Successfully set up and validated an eCommerce web page with PayPal integration to automate licensing purchases</li>
@@ -82,8 +90,10 @@
           </ul>
         </div>
         <div class="window-experience-block">
-          <div class="window-experience-header"><b>Systems Design Engineer</b></div>
-          <div class="window-experience-time">May 2021 - Sep 2021</div>
+          <div class="window-experience-header">
+            <span><b>Systems Design Engineer</b></span>
+            <span>May 2021 - Sep 2021</span>
+          </div>
           <div class="window-experience-long-header"><a href="https://tmmc.ca/en/" target="_blank">Toyota Motor Manufacturing Canada</a></div>
           <div class="window-experience-long-time">Cambridge, Ontario</div>
           <ul class="experience-list">
@@ -92,19 +102,27 @@
           </ul>
         </div>
         <div class="window-experience-block">
-          <div class="window-experience-header"><b>Teaching Assistant</b></div>
-          <div class="window-experience-time">Sep 2020 - Dec 2020</div>
-          <div class="window-experience-header"><a href="https://uwaterloo.ca/" target="_blank">University of Waterloo</a></div>
-          <div class="window-experience-time">Waterloo, Ontario</div>
+          <div class="window-experience-header">
+            <span><b>Teaching Assistant</b></span>
+            <span>Sep 2020 - Dec 2020</span>
+          </div>
+          <div class="window-experience-header">
+            <span><a href="https://uwaterloo.ca/" target="_blank">University of Waterloo</a></span>
+            <span>Waterloo, Ontario</span>
+          </div>
           <ul class="experience-list">
             <li>Collaborated with professors and fellow teaching assistants to deliver more than 80 virtual lectures and tutorials</li>
           </ul>
         </div>
         <div class="window-experience-block">
-          <div class="window-experience-header"><b>Database Developer</b></div>
-          <div class="window-experience-time">Jan 2020 - May 2020</div>
-          <div class="window-experience-header"><a href="https://uwaterloo.ca/" target="_blank">University of Waterloo</a></div>
-          <div class="window-experience-time">Waterloo, Ontario</div>
+          <div class="window-experience-header">
+            <span><b>Database Developer</b></span>
+            <span>Jan 2020 - May 2020</span>
+          </div>
+          <div class="window-experience-header">
+            <span><a href="https://uwaterloo.ca/" target="_blank">University of Waterloo</a></span>
+            <span>Waterloo, Ontario</span>
+          </div>
           <ul class="experience-list">
             <li>Created and populated tables in a Microsoft Access database to store more than 300 employee records</li>
             <li>Developed 12 SQL queries that filter and display employee records to reduce fetching time by 80 percent</li>
@@ -728,15 +746,8 @@ ul {
 }
 
 .window-experience-header {
-  width: 53%;
-  float: left;
-  text-align: left;
-}
-
-.window-experience-time {
-  width: 47%;
-  float: left;
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
 }
 
 .window-experience-long-header {
